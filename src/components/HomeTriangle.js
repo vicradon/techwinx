@@ -32,7 +32,7 @@ export default function HomeTriangle() {
               font-size:1.3em
             }
             .blog-items {
-              font-size:0.9em
+              font-size:0.8em
             }
             @media(min-width:600px){
               .fake-img {
@@ -55,7 +55,7 @@ export default function HomeTriangle() {
         </div>
         <div className="triangle">
           <h1 className = "motto">The Repository for Everything Tech!</h1>
-          <p className = "blog-items">Emerging tech, Tech Events, Web Development</p>
+          <p className = "blog-items">AI, drones, Tech Events, Web Development...</p>
         </div>
       </div>
     </div>

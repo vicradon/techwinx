@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "bulma": "^0.8.0",
+    "bulma-carousel": "^4.0.4",
     "gatsby": "^2.18.12",
     "gatsby-plugin-sass": "^2.1.27",
     "gatsby-source-filesystem": "^2.1.46",
@@ -24,9 +25,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+    "url": "https://https://github.com/Vicradon/techwinx"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/Vicradon/techwinx/issues"
   }
 }

@@ -13,12 +13,17 @@ export default function Navbar() {
             .navbar-padding {
               padding:0 7rem;
             }
+            @media(max-width:950px){
+              .navbar-padding {
+                padding:0;
+              }
+            }
           `
         }
       </style>
       <div className="navbar-brand">
         <a className="navbar-item" href="https://bulma.io">
-          <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
+          {/* <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" /> */}
         </a>
 
         <a onClick = {() => active ? setActive(''): setActive('is-active')} role="button" className={`navbar-burger burger ${active}`} aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
