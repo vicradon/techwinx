@@ -1,61 +1,105 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem
+} from 'reactstrap';
 
-export default function Navbar() {
-  const [active, setActive] = useState('');
+const Example = (props) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
+
   return (
-    <nav className="navbar navbar-padding navbar-background" role="navigation" aria-label="main navigation">
+    <div>
       <style>
-        {
-          `
-            .navbar-background{
-              background-color:lightblue;
+        {`
+          .nav-items-justified-right {
+            display:flex;
+            justify-content:right;
+          }
+          .px-20 {
+            padding: 8px 10rem;
+          }
+          .lb {
+            background-color:lightblue !important; 
+          }
+          nav * {
+            font-size:1.2rem;
+            padding:0 0.5rem;
+            color:black !important;
+          }
+          nav *:hover {
+            color:grey;
+          }
+          .noborder {
+            border:none;
+            outline:none !important;
+          }
+          @media(max-width:1000px){
+            .px-20 {
+              padding: 8px 7rem;
             }
-            .navbar-padding {
-              padding:0 7rem;
+          }
+          @media(max-width:750px){
+            .px-20 {
+              padding: 8px 2rem;
             }
-            @media(max-width:950px){
-              .navbar-padding {
-                padding:0;
-              }
+            .white-bg {
+              background-color:whitesmoke;
             }
-          `
-        }
+          }
+        `}
       </style>
-      <div className="navbar-brand">
-        <a className="navbar-item" href="https://bulma.io">
-          {/* <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" /> */}
-        </a>
+      <Navbar className = "px-20 lb" color="light" light expand="md">
+        <NavbarBrand href="/">Techwinx</NavbarBrand>
+        <NavbarToggler className = "noborder" onClick={toggle} />
 
-        <a onClick = {() => active ? setActive(''): setActive('is-active')} role="button" className={`navbar-burger burger ${active}`} aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="ml-auto nav white-bg" navbar>
+              <NavItem>
+                <NavLink href="/components/">AI</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/components/">MR</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/components/">UAVs</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/components/">Tefrica</NavLink>
+              </NavItem>
+              <UncontrolledDropdown nav inNavbar>
+                <DropdownToggle nav caret>
+                  Options
+              </DropdownToggle>
+                <DropdownMenu>
+                  <DropdownItem>
+                    Young Techie
+                </DropdownItem>
+                  <DropdownItem>
+                    Tech for social good
+                </DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem>
+                    Report an issue
+                </DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
+          </Nav>
+        </Collapse>
 
-      <div id="navbarBasicExample" className={`navbar-menu ${active}`}>
-        <div className="navbar-end">
-          <a className="navbar-item">Home</a>
-
-          <a className="navbar-item">Emerging Tech</a>
-          <a className="navbar-item">Women in tech</a>
-
-          <div className="navbar-item has-dropdown is-hoverable">
-            <a className="navbar-link">More</a>
-
-            <div className="navbar-dropdown">
-              <a className="navbar-item">About</a>
-              <a className="navbar-item">Tech for social good</a>
-              <a className="navbar-item">Contact</a>
-              <a className="navbar-item">Write for us!</a>
-              <hr className="navbar-divider" />
-              <a className="navbar-item">Report an issue</a>
-            </div>
-          </div>
-        </div>
-
-        
-      </div>
-    </nav>
-  )
+      </Navbar>
+    </div>
+  );
 }
+
+export default Example;

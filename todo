@@ -1,0 +1,9 @@
+First, make the thing work like is drawn on the book
+  Use JS to track the children of the carousels
+  Then Use setInterval to control their movement
+Essentially, we're meant to build a rolling component
+  This component would be able to roll to the first card when swiped from the other side
+Second, remove the scrollbar
+Third, Style the footer
+Then, test the components
+Finally, attach a CMS
