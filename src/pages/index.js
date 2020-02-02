@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import AI from "../sections/AI";
 import MR from "../sections/MR";
 import UAVs from "../sections/UAVs";
+import Tefrica from "../sections/Tefrica";
 
 const Index = () => (
   <Layout>
@@ -14,6 +15,7 @@ const Index = () => (
     <AI />
     <MR />
     <UAVs />
+    <Tefrica />
   </Layout>
 )
 export default Index;

@@ -1,21 +1,25 @@
 import React from 'react'
 
 
-export default function Footer(){
+export default function Footer() {
   return (
-    <div className = "footer">
+    <div className="techwinx-footer">
       <style>
         {`
-          .footer {
+          .techwinx-footer {
             text-align:center;
+            background-color:lightblue;
+            padding: 2rem 0;
+            margin-top:2rem;
           }
           .write-for-us {
-            border:3px dashed lightblue;
+            border:3px dashed #3A9FBF;
             width:25%;
             margin:3rem auto;
             font-size:1.5em;
             color:inherit;
             padding:0.5rem;
+            cursor:pointer;
           }
           .footer-links {
             display:flex;
@@ -26,15 +30,26 @@ export default function Footer(){
             margin:0 3rem;
             font-size:1.2em;
             color:inherit;
+            cursor:pointer;
           }
           .footer-links a:hover {
-            color:blue;
+            color:#3A9FBF;
+          }
+          @media(max-width:750px){
+            .footer-links {
+              flex-flow: column wrap;
+              margin:2rem 0 2rem 0;
+            }
+            .footer-links a {
+              margin:0.5rem 0;
+              font-size:1.5em;
+            }
           }
         `}
       </style>
-      <a className = "write-for-us">Write for us</a>
+      <a className="write-for-us">Write for us</a>
 
-      <div className = "footer-links">
+      <div className="footer-links">
         <a>About</a>
         <a>Contact</a>
         <a>Credits</a>
