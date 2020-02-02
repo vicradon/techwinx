@@ -3,9 +3,11 @@ First, make the thing work like is drawn on the book
   Then Use setInterval to control their movement
 Essentially, we're meant to build a rolling component
   This component would be able to roll to the first card when swiped from the other side
-Second, remove the scrollbar
+attach a CMS
+
 Then, test the components
-Finally, attach a CMS
 
 Archive:
 Third, Style the footer --@done
+Second, remove the scrollbar --@done
+
