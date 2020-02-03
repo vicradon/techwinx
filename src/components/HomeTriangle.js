@@ -51,7 +51,7 @@ export default function HomeTriangle() {
       </style>
       <div className = "triangle-container">
         <div className="fake-img-container">
-          <div className="fake-img" role="image"></div>
+          <div className="fake-img"></div>
         </div>
         <div className="triangle">
           <h1 className = "motto">The Repository for Everything Tech!</h1>

@@ -47,13 +47,13 @@ export default function Footer() {
           }
         `}
       </style>
-      <a className="write-for-us">Write for us</a>
+      <a href = "./write-for-us" className="write-for-us">Write for us</a>
 
       <div className="footer-links">
-        <a>About</a>
-        <a>Contact</a>
-        <a>Credits</a>
-        <a>Privacy</a>
+        <a href = "./about">About</a>
+        <a href = "./contact">Contact</a>
+        <a href = "./credits">Credits</a>
+        <a href = "./privacy">Privacy</a>
       </div>
 
       <p>Content and graphics © 2020</p>

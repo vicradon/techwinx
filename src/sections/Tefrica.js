@@ -11,7 +11,7 @@ const Tefrica = () => {
         `}
       </style>
       <div className="py-4">
-        <h3 className="center">🌍 Tefrica</h3>
+        <h3 className="center"><span aria-label = "jsx-a11y" role = "img">🌍</span> Tefrica</h3>
         <PostCarousel>
           <PostCard/>
           <PostCard/>

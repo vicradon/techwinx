@@ -11,7 +11,7 @@ const AI = () => {
         `}
       </style>
       <div className="py-4">
-        <h3 className="center">🤖 AI</h3>
+        <h3 className="center"><span aria-label = "jsx-a11y" role = "img">🤖</span> AI</h3>
         <PostCarousel>
           <PostCard />
           <PostCard />

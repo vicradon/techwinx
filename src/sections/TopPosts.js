@@ -11,7 +11,7 @@ export default function TopPosts() {
         `}
       </style>
       <div className="py-4">
-        <h3 className="center">🏆 Top Posts</h3>
+        <h3 className="center"><span aria-label = "jsx-a11y" role = "img">🏆</span> Top Posts</h3>
         <PostCarousel>
           <PostCard/>
           <PostCard/>

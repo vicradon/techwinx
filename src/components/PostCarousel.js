@@ -1,5 +1,4 @@
-import React, { useEffect, Children } from 'react';
-import PostCard from './PostCard';
+import React, { Children } from 'react';
 
 const PostCarousel = ({ children }) => {
 
