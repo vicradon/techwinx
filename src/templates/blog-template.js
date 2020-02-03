@@ -3,77 +3,92 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
-
-
-BlogPostTemplate.propTypes = {
-  content: PropTypes.node.isRequired,
-  contentComponent: PropTypes.func,
-  description: PropTypes.string,
-  title: PropTypes.string,
-  helmet: PropTypes.object,
-}
+import { Row, Col } from 'reactstrap'
 
 const BlogPostTemplate = ({ data }) => {
   const { markdownRemark: post } = data
-  console.log(post)
 
   return (
     <Layout>
-      {data}
-      {/* <section className="section">
-        {<Helmet titleTemplate="%s | Blog">
-          <title>{`${post.frontmatter.title}`}</title>
-          <meta
-            name="description"
-            content={`${post.frontmatter.description}`}
-          />
-        </Helmet> || ''}
-        <div className="container content">
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-                {title}
-              </h1>
-              <p>{description}</p>
-              <div dangerouslySetInnerHTML={{ __html: post }} />
-              {tags && tags.length ? (
-                <div style={{ marginTop: `4rem` }}>
-                  <h4>Tags</h4>
-                  <ul className="taglist">
-                    {tags.map(tag => (
-                      <li key={tag + `tag`}>
-                        <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ) : null}
-            </div>
-          </div>
+      <style>
+        {`
+          p {
+            font-size:20px;
+          }
+          .blog-container {
+          }
+          .post-header {
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            flex-flow:column wrap;
+          }
+          .post-heading {
+            color:var(--blue);
+            font-size:3.7em;
+            font-family: Recursive, "Segoe UI", "Helvetica Neue", Helvetica, Roboto, 'Open Sans', FreeSans, sans-serif;
+          }
+          .post-tags {
+            color:var(--red);
+            cursor:pointer;
+          }
+          .post-author {
+            border:1px solid var(--pink);
+            color: var(--red);
+            padding: 0.3rem;
+            border-radius:0.3rem;
+            cursor:pointer;
+          }
+          blockquote {
+            margin-bottom: 1em;
+            margin-top: 1.9em;
+            border-left: 4px solid var(--blue);
+            padding-left: .8em;
+            text-align: justify;
+            font-style:italic;
+          }
+      `}
+      </style>
+
+      <div className="container pt-4" fluid={true}>
+        <div className="post-header">
+          <span className="post-tags">{post.frontmatter.tags.map(x => `#${x}${" "}`)}</span>
+          <h1 className="post-heading">{post.frontmatter.title}</h1>
+          <span className="post-author">{post.frontmatter.author} </span>
         </div>
-      </section> */}
+
+        <Row>
+          <Col xl="9" l="12">
+            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          </Col>
+          <Col xs="auto">.col-auto - variable width content</Col>
+        </Row>
+
+      </div>
+
     </Layout>
   )
 }
 
-BlogPost.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.object,
-  }),
-}
+// BlogPost.propTypes = {
+//   data: PropTypes.shape({
+//     markdownRemark: PropTypes.object,
+//   }),
+// }
 
 export default BlogPostTemplate;
 
-// export const pageQuery = graphql`
-//   query BlogPostByID($id: String!) {
-//     markdownRemark(id: { eq: $id }) {
-//       id
-//       html
-//       frontmatter {
-//         date(formatString: "MMMM DD, YYYY")
-//         title
-//         tags
-//       }
-//     }
-//   }
-// `
+export const pageQuery = graphql`
+  query BlogPostByID($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      id
+      html
+      frontmatter {
+        date(formatString: "MMMM DD, YYYY")
+        title
+        tags
+        author
+      }
+    }
+  }
+`

@@ -13,6 +13,9 @@ export default function Layout({ children }) {
               justify-content: center;
               align-items: center;
             }
+            body {
+              font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            }
           `
         }
       </style>

@@ -10,18 +10,16 @@ exports.createPages = async ({ actions, graphql }) => {
       allMarkdownRemark(limit: 1000) {
         edges {
           node {
-            id
-            fields {
-              slug
-            }
             frontmatter {
               tags
               templateKey
+              path
             }
+            id
           }
         }
       }
-    }
+    }      
   `)
 
   if (result.errors) {
@@ -34,7 +32,7 @@ exports.createPages = async ({ actions, graphql }) => {
   posts.forEach(edge => {
     const id = edge.node.id
     createPage({
-      path: edge.node.fields.slug,
+      path: edge.node.frontmatter.path,
       tags: edge.node.frontmatter.tags,
       component: path.resolve(
         `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
@@ -46,6 +44,7 @@ exports.createPages = async ({ actions, graphql }) => {
     })
   })
 
+  /*
   // Tag pages:
   let tags = []
   // Iterate through each post, putting all found tags into `tags`
@@ -69,4 +68,5 @@ exports.createPages = async ({ actions, graphql }) => {
       },
     })
   })
+  */
 }
