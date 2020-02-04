@@ -5,6 +5,7 @@ path: /advancements-in-vr-2020
 tags: [vr, mr]
 templateKey: blog-template
 featured: false
+featuredImage: ../../static/img/hult 2018.PNG
 category: mr
 ---
 > The Advancements in VR field is a wonderful one. Without augmentation from advanced comouters, users would be limited. That's where VR comes in

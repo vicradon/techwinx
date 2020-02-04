@@ -5,7 +5,7 @@ path: /agi-far-future
 tags: [ai, agi, deep-learning]
 templateKey: blog-template
 author: Chukwujama Osinachi
-featuredimage: /img/gans.png
+featuredImage: /img/gans.png
 featured: true
 category: ai
 ---
