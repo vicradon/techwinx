@@ -12,7 +12,7 @@ const BlogPostTemplate = ({ data }) => {
     <Layout>
       <style>
         {`
-          p {
+          .markdown-content p {
             font-size:20px;
           }
           .blog-container {
@@ -22,6 +22,7 @@ const BlogPostTemplate = ({ data }) => {
             justify-content:center;
             align-items:center;
             flex-flow:column wrap;
+            margin: 3rem 0;
           }
           .post-heading {
             color:var(--blue);
@@ -42,15 +43,32 @@ const BlogPostTemplate = ({ data }) => {
           blockquote {
             margin-bottom: 1em;
             margin-top: 1.9em;
-            border-left: 4px solid var(--blue);
+            border-left: 4px solid var(--orange);
             padding-left: .8em;
             text-align: justify;
             font-style:italic;
           }
+          .post-last-edit {
+            border-top:3px solid var(--orange);
+            width:220px;
+          }
+          .more-section {
+            margin-top:10rem;
+            background-color:whitesmoke;
+            padding:1rem 0;
+          } 
+          .more-section h3 {
+            color:var(--orange);
+          }
+          .more-section a {
+            font-size:1.2em;
+            color: lightblue;
+            cursor: pointer;
+          }
       `}
       </style>
 
-      <div className="container pt-4" fluid={true}>
+      <div className="container pt-4">
         <div className="post-header">
           <span className="post-tags">{post.frontmatter.tags.map(x => `#${x}${" "}`)}</span>
           <h1 className="post-heading">{post.frontmatter.title}</h1>
@@ -59,9 +77,15 @@ const BlogPostTemplate = ({ data }) => {
 
         <Row>
           <Col xl="9" l="12">
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            <div className="markdown-content" dangerouslySetInnerHTML={{ __html: post.html }} />
+            <p className="post-last-edit">Last edited {post.frontmatter.date}</p>
           </Col>
-          <Col xs="auto">.col-auto - variable width content</Col>
+          <Col xl="3" l = "12">
+            <div className="more-section center-column">
+              <h3>More {post.frontmatter.category}</h3>
+              <a>Dummy Stuff</a>
+            </div>
+          </Col>
         </Row>
 
       </div>

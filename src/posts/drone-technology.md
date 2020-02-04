@@ -4,6 +4,8 @@ date: 2020-02-01
 path: /drone-technology
 tags: [uav, drone]
 templateKey: blog-template
+featured: false
+category: uav
 ---
 Drone technology is technology concerning the UAVs we popularly know as drones. Just like the one in the image.
 

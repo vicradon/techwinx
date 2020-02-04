@@ -1,6 +1,7 @@
 import React from 'react';
 import PostCard from '../components/PostCard';
 import PostCarousel from '../components/PostCarousel';
+import { Button } from 'reactstrap';
 
 const Tefrica = () => {
    return (
@@ -18,6 +19,7 @@ const Tefrica = () => {
           <PostCard/>
           <PostCard />
         </PostCarousel>
+        <p className = "center mt-3"><Button outline color = "primary">All Tefrica posts</Button></p>
       </div>
     </section>
   )

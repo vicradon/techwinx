@@ -1,11 +1,7 @@
-create pages for each markdown post
-  add author to the frontmatter
-  display the author at the end of each post
-  Link other relevant osts in-between
-run a query on the index page to display content and links in the appropriate categories
+In each category, run a query and display the content
+  it automatically displays in the index
 
+Run queries on other categories
+Display an excerpt on them
 
-Archive:
-Third, Style the footer --@done
-Second, remove the scrollbar --@done
-
+Work with the image plugin

@@ -1,23 +1,41 @@
 import React from 'react';
 import PostCarousel from '../components/PostCarousel';
 import PostCard from '../components/PostCard';
+import { Button } from 'reactstrap';
+import { useStaticQuery, graphql } from "gatsby"
+
 
 const AI = () => {
+  const data = useStaticQuery(graphql`
+    query AIQuery {
+      allMarkdownRemark(limit: 4, filter: {frontmatter: {category: {eq: "ai"}}}) {
+        edges {
+          node {
+            excerpt(pruneLength: 70)
+            frontmatter {
+              title
+            }
+          }
+        }
+      }
+    }
+  `)
+  const posts = data.allMarkdownRemark.edges;
   return (
     <section className="section">
       <style>
         {`
-          
+           
         `}
       </style>
       <div className="py-4">
-        <h3 className="center"><span aria-label = "jsx-a11y" role = "img">🤖</span> AI</h3>
+        <h3 className="center"><span aria-label="jsx-a11y" role="img">🤖</span> AI</h3>
         <PostCarousel>
-          <PostCard />
-          <PostCard />
-          <PostCard />
-          <PostCard />
+          {
+            posts.map((x, i) => <PostCard title={x.node.frontmatter.title} content={x.node.excerpt} />)
+          }
         </PostCarousel>
+        <p className="center mt-3"><Button outline color="primary">All AI posts</Button></p>
       </div>
     </section>
   )

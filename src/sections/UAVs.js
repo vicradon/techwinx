@@ -2,6 +2,7 @@ import React from 'react'
 import PostCarousel from '../components/PostCarousel'
 import PostCard from '../components/PostCard'
 import droneIcon from '../images/ar.webp';
+import { Button } from 'reactstrap';
 
 const UAVs = () => {
   return (
@@ -22,6 +23,7 @@ const UAVs = () => {
           <PostCard />
           <PostCard />
         </PostCarousel>
+        <p className = "center mt-3"><Button outline color = "primary">All UAV posts</Button></p>
       </div>
     </section>
   )
