@@ -16,7 +16,7 @@ const PostCard = (props) => {
         `}
       </style>
       <Card>
-        <CardImg top width="100%" src={cardImg} alt="Stuff" />
+        <CardImg top width="100%" src={props.image || cardImg} alt="Stuff" />
         <CardBody>
           <CardTitle className = "techwinx-card-title">{props.title} </CardTitle>
           <CardText>{props.content} </CardText>
