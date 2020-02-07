@@ -1,5 +1,5 @@
 import React from 'react';
-// import Img from "gatsby-image"
+import Img from "gatsby-image"
 import {
   Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle
@@ -26,7 +26,8 @@ const PostCard = (props) => {
       </style>
       <Link className = "post-link" to = {props.path}>
         <Card>
-          <CardImg top width="100%" src={props.image || cardImg} alt="Stuff" />
+          {/* <CardImg top width="100%" src={props.image } alt="Stuff" /> */}
+          <Img fluid = {props.image}/>
           <CardBody>
             <CardTitle className="techwinx-card-title">{props.title} </CardTitle>
             <CardText>{props.content} </CardText>

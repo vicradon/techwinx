@@ -4,7 +4,7 @@ import HomeTriangle from '../components/HomeTriangle'
 import TopPosts from '../sections/TopPosts'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AI from "../sections/AI";
-import MR from "../sections/MR";
+// import MR from "../sections/MR";
 import UAVs from "../sections/UAVs";
 import Tefrica from "../sections/Tefrica";
 
@@ -13,7 +13,7 @@ const Index = () => (
     <HomeTriangle />
     <TopPosts />
     <AI />
-    <MR />
+    {/* <MR /> */}
     <UAVs />
     <Tefrica />
   </Layout>
