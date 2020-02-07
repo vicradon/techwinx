@@ -5,10 +5,9 @@ import {
   CardTitle, CardSubtitle
 } from 'reactstrap';
 import cardImg from '../images/318x180.svg';
+import { Link } from 'gatsby';
 
 const PostCard = (props) => {
-  // let featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid
-  
   return (
     <div>
       <style>
@@ -16,16 +15,24 @@ const PostCard = (props) => {
           .techwinx-card-title {
             font-size:1.3rem;
           }
+          .post-link {
+            color:inherit;
+          }
+          .post-link:hover {
+            text-decoration:none;
+            color:inherit;
+          }
         `}
       </style>
-      <Card>
-        <CardImg top width="100%" src={props.image || cardImg} alt="Stuff" />
-        {/* <Img fluid={featuredImgFluid} /> */}
-        <CardBody>
-          <CardTitle className = "techwinx-card-title">{props.title} </CardTitle>
-          <CardText>{props.content} </CardText>
-        </CardBody>
-      </Card>
+      <Link className = "post-link" to = {props.path}>
+        <Card>
+          <CardImg top width="100%" src={props.image || cardImg} alt="Stuff" />
+          <CardBody>
+            <CardTitle className="techwinx-card-title">{props.title} </CardTitle>
+            <CardText>{props.content} </CardText>
+          </CardBody>
+        </Card>
+      </Link>
     </div>
   );
 };

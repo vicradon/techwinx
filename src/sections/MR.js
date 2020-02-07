@@ -15,6 +15,8 @@ const MR = () => {
             excerpt(pruneLength: 70)
             frontmatter {
               title
+              featuredImage
+              path
             }
           }
         }
@@ -37,7 +39,7 @@ const MR = () => {
         <h3 className="center"><img className="vr-emoji" src={vrEmoji} alt="vr emoji" /> Mixed Reality</h3>
         <PostCarousel>
           {
-            posts.map((x, i) => <PostCard title = {x.node.frontmatter.title} content = {x.node.excerpt} />)
+            posts.map((x, i) => <PostCard title = {x.node.frontmatter.title} content = {x.node.excerpt} path = {x.node.frontmatter.path} />)
           }
         </PostCarousel>
         <p className="center mt-3"><Button outline color="primary">All MR posts</Button></p>

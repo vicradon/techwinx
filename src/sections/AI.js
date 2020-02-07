@@ -15,6 +15,7 @@ const AI = () => {
             frontmatter {
               title
               featuredImage
+              path
             }
           }
         }
@@ -33,7 +34,7 @@ const AI = () => {
         <h3 className="center"><span aria-label="jsx-a11y" role="img">🤖</span> AI</h3>
         <PostCarousel>
           {
-            posts.map((x, i) => <PostCard title={x.node.frontmatter.title} image = {x.node.frontmatter.featuredImage} content={x.node.excerpt} />)
+            posts.map((x, i) => <PostCard title={x.node.frontmatter.title} image = {x.node.frontmatter.featuredImage} content={x.node.excerpt} path = {x.node.frontmatter.path} />)
           }
         </PostCarousel>
         <p className="center mt-3"><Button outline color="primary">All AI posts</Button></p>
