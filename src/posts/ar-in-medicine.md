@@ -5,6 +5,7 @@ path: /ar-in-medicine
 tags: [vr, mr]
 templateKey: blog-template
 featured: true
+featuredImage: ../img-uploads/water gen.PNG
 category: mr
 ---
 > The medical field is a wonderful one. Without augmentation from advanced comouters, doctors, surgeons, etc would be limited. That's where AR comes in

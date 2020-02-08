@@ -12,6 +12,7 @@ import {
   DropdownMenu,
   DropdownItem
 } from 'reactstrap';
+import { Link } from 'gatsby';
 
 const Example = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,6 +45,9 @@ const Example = (props) => {
             border:none;
             outline:none !important;
           }
+          .nav-link {
+            padding:0 0.2rem !important;
+          }
           @media(max-width:1000px){
             .px-20 {
               padding: 8px 7rem;
@@ -56,44 +60,60 @@ const Example = (props) => {
             .white-bg {
               background-color:whitesmoke;
             }
+            .nav-link {
+              padding:0.2rem !important;
+            }
           }
         `}
       </style>
-      <Navbar className = "px-20 lb" color="light" light expand="md">
-        <NavbarBrand href="/">Techwinx</NavbarBrand>
-        <NavbarToggler className = "noborder" onClick={toggle} />
+      <Navbar className="px-20 lb" color="light" light expand="md">
+
+        <Link to="/">
+          <NavbarBrand>Techwinx</NavbarBrand>
+        </Link>
+
+
+        <NavbarToggler className="noborder" onClick={toggle} />
 
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto nav white-bg" navbar>
-              <NavItem>
-                <NavLink href="/components/">AI</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/components/">MR</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/components/">UAVs</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/components/">Tefrica</NavLink>
-              </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
+            <NavItem>
+              <Link className = "nav-link" to="/ai">
+                <NavLink >AI</NavLink>
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link className = "nav-link" to="/mr">
+                <NavLink >MR</NavLink>
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link className = "nav-link" to="/uavs">
+                <NavLink >UAVs</NavLink>
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link className = "nav-link" to="/tefrica">
+                <NavLink >Tefrica</NavLink>
+              </Link>
+            </NavItem>
+            <UncontrolledDropdown nav inNavbar>
+              <DropdownToggle nav caret>
+                Options
               </DropdownToggle>
-                <DropdownMenu>
-                  <DropdownItem>
-                    Young Techie
+              <DropdownMenu>
+                <DropdownItem>
+                  Young Techie
                 </DropdownItem>
-                  <DropdownItem>
-                    Tech for social good
+                <DropdownItem>
+                  Tech for social good
                 </DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>
-                    Report an issue
+                <DropdownItem divider />
+                <DropdownItem>
+                  Report an issue
                 </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
+              </DropdownMenu>
+            </UncontrolledDropdown>
           </Nav>
         </Collapse>
 

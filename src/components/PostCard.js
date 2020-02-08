@@ -24,10 +24,13 @@ const PostCard = (props) => {
           }
         `}
       </style>
-      <Link className = "post-link" to = {props.path}>
+      <Link to={props.path || "/404"} className="post-link">
         <Card>
-          {/* <CardImg top width="100%" src={props.image } alt="Stuff" /> */}
-          <Img fluid = {props.image}/>
+          {
+            props.image ?
+              <CardImg key = {new Date().toDateString()} top width="100%" src={props.image} alt="Stuff" />:
+              <CardImg key = {new Date().toDateString()} top width="100%" src={cardImg} alt="Stuff" />
+          }
           <CardBody>
             <CardTitle className="techwinx-card-title">{props.title} </CardTitle>
             <CardText>{props.content} </CardText>

@@ -29,7 +29,6 @@ const AI = () => {
     }
   `)
   const posts = data.allMarkdownRemark.edges;
-  console.log(posts)
   return (
     <section className="section">
       <style>
@@ -42,8 +41,9 @@ const AI = () => {
         <PostCarousel>
           {
             posts.map((x, i) => <PostCard
+              key = {i}
               title={x.node.frontmatter.title}
-              image={x.node.frontmatter.featuredImage}
+              image={x.node.frontmatter.featuredImage.childImageSharp.fluid.src}
               content={x.node.excerpt}
               path={x.node.frontmatter.path}
             />)
