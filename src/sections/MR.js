@@ -16,7 +16,7 @@ const MR = () => {
             frontmatter {
               title
               path
-              featuredImage{
+              featuredImage {
                 childImageSharp {
                   fluid {
                     src
@@ -29,6 +29,13 @@ const MR = () => {
       }
     }
   `)
+  // featuredImage{
+  //   childImageSharp {
+  //     fluid {
+  //       src
+  //     }
+  //   }
+  // }
   const posts = data.allMarkdownRemark.edges;
   
   return (
