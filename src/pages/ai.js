@@ -1,32 +1,32 @@
 import React from 'react';
 import PostCard from '../components/PostCard';
 import { graphql } from "gatsby"
-import Layout from '../components/Layout';
+import PostsContainer from '../components/PostsContainer';
 
 const AICategory = ({ data }) => {
   const posts = data.allMarkdownRemark.edges;
 
   return (
-    <Layout>
-      <section className="section">
-        <style>
-          {`
-          
-        `}
-        </style>
-        <div className="py-4">
-          {
-            posts.map((x, i) => <PostCard
-              key={i}
-              title={x.node.frontmatter.title}
-              image={x.node.frontmatter.featuredImage.childImageSharp.fluid.src || ''}
-              content={x.node.excerpt}
-              path={x.node.frontmatter.path}
-            />)
-          }
-        </div>
-      </section>
-    </Layout>
+    <PostsContainer name = "AI">
+      <style>
+        {`
+        
+      `}
+      </style>
+      {
+        posts.map((x, i) => {
+          let a = '';
+          x.node.frontmatter.featuredImage ? a = x.node.frontmatter.featuredImage.childImageSharp.fluid.src : a = ''
+          return <PostCard
+            key={i}
+            title={x.node.frontmatter.title}
+            image={a}
+            content={x.node.excerpt}
+            path={x.node.frontmatter.path}
+          />
+        })
+      }
+    </PostsContainer>
   )
 }
 

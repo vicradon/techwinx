@@ -1,5 +1,6 @@
 module.exports = {
   plugins: [
+    
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -15,8 +16,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-sass`,
-    `gatsby-transformer-sharp`, 
-    `gatsby-plugin-sharp`,
     {
       resolve: 'gatsby-transformer-remark',
       options: {
@@ -30,5 +29,7 @@ module.exports = {
         ]
       }
     },
+    `gatsby-transformer-sharp`, 
+    `gatsby-plugin-sharp`,
   ],
 }
