@@ -1,0 +1,56 @@
+import React from 'react';
+import PostCard from '../components/PostCard';
+import { graphql } from "gatsby"
+import Layout from '../components/Layout';
+
+const MRCategory = ({ data }) => {
+  const posts = data.allMarkdownRemark.edges;
+
+  return (
+    <Layout>
+      <section className="section">
+        <style>
+          {`
+          
+        `}
+        </style>
+        <div className="py-4">
+          {
+            posts.map((x, i) => <PostCard
+              key={i}
+              title={x.node.frontmatter.title}
+              image={x.node.frontmatter.featuredImage.childImageSharp.fluid.src || ''}
+              content={x.node.excerpt}
+              path={x.node.frontmatter.path}
+            />)
+          }
+        </div>
+      </section>
+    </Layout>
+  )
+}
+
+export const query = graphql`
+{
+  allMarkdownRemark(limit: 20, filter: {frontmatter: {category: {eq: "mr"}}}) {
+    edges {
+      node {
+        excerpt(pruneLength: 70)
+        frontmatter {
+          title
+          path
+          featuredImage {
+            childImageSharp {
+              fluid {
+                src
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`
+
+export default MRCategory;
