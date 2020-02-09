@@ -7,6 +7,8 @@ templateKey: blog-template
 featured: true
 featuredImage: ../img-uploads/water gen.PNG
 category: mr
+category_name: MR
+author: Akachi Jonathan
 ---
 > The medical field is a wonderful one. Without augmentation from advanced comouters, doctors, surgeons, etc would be limited. That's where AR comes in
 

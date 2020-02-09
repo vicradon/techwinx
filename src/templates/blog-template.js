@@ -7,7 +7,7 @@ import { Row, Col } from 'reactstrap'
 
 const BlogPostTemplate = ({ data }) => {
   const { markdownRemark: post } = data
-
+  console.log(data)
   return (
     <Layout>
       <style>
@@ -55,7 +55,7 @@ const BlogPostTemplate = ({ data }) => {
           .more-section {
             margin-top:10rem;
             background-color:whitesmoke;
-            padding:1rem 0;
+            padding:1rem 0.5rem;
           } 
           .more-section h3 {
             color:var(--orange);
@@ -82,8 +82,9 @@ const BlogPostTemplate = ({ data }) => {
           </Col>
           <Col xl="3" l = "12">
             <div className="more-section center-column">
-              <h3>More {post.frontmatter.category}</h3>
+              <h3>More {post.frontmatter.category_name}</h3>
               <a>Dummy Stuff</a>
+              <p>More</p>
             </div>
           </Col>
         </Row>
@@ -104,15 +105,32 @@ export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostByID($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+    markdownRemark(id: {eq: $id}) {
       id
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
         tags
+        category
+        category_name
         author
       }
     }
   }
+
+  
 `
+
+// query MorePosts($category: String!){
+//   allMarkdownRemark(limit: 5, filter: {frontmatter: {category: {eq: $category}}}) {
+//     edges {
+//       node {
+//         frontmatter {
+//           title
+//           path
+//         }
+//       }
+//     }
+//   }
+// }
