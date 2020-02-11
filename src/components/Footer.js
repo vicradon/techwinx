@@ -3,9 +3,12 @@ import React from 'react'
 
 export default function Footer() {
   return (
+    <>
+    <p style = {{marginTop:"15rem"}}></p>
     <div className="techwinx-footer">
       <style>
         {`
+          
           .techwinx-footer {
             text-align:center;
             background-color:lightblue;
@@ -21,6 +24,10 @@ export default function Footer() {
             padding:0.5rem;
             cursor:pointer;
           }
+          .write-for-us:hover {
+            text-decoration:none;
+            color:#3A9FBF;
+          }
           .footer-links {
             display:flex;
             justify-content:center;
@@ -34,6 +41,7 @@ export default function Footer() {
           }
           .footer-links a:hover {
             color:#3A9FBF;
+            text-decoration:none;
           }
           @media(max-width:750px){
             .footer-links {
@@ -53,10 +61,11 @@ export default function Footer() {
         <a href = "./about">About</a>
         <a href = "./contact">Contact</a>
         <a href = "./credits">Credits</a>
-        <a href = "./privacy">Privacy</a>
+        {/* <a href = "./privacy">Privacy</a> */}
       </div>
 
       <p>Content and graphics © 2020</p>
     </div>
+    </>
   )
 }

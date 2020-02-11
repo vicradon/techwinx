@@ -12,8 +12,8 @@ const PostsContainer = ({ children, name }) => {
             grid-template-columns: 1fr 1fr 1fr;
             grid-gap: 3rem 2rem;
           }
-          .blue {
-            color:var(--blue);
+          .posts-container-header {
+            color:var(--header-blue);
           }
           @media(max-width:760px){
             .posts-container {
@@ -30,7 +30,7 @@ const PostsContainer = ({ children, name }) => {
         `}
         </style>
         <div className="container pt-4">
-          <h1 className = "blue center">All {name} Posts</h1>
+          <h1 className = "posts-container-header center">All {name} Posts</h1>
           <div className="py-4 posts-container">
             {children}
           </div>

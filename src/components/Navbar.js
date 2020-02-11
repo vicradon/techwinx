@@ -41,7 +41,7 @@ const Example = (props) => {
           nav *:hover {
             color:grey;
           }
-          .noborder {
+          .no-border {
             border:none;
             outline:none !important;
           }
@@ -68,33 +68,31 @@ const Example = (props) => {
       </style>
       <Navbar className="px-20 lb" color="light" light expand="md">
 
-        <Link to="/">
-          <NavbarBrand>Techwinx</NavbarBrand>
-        </Link>
+        <Link to="/">Techwinx</Link>
 
 
-        <NavbarToggler className="noborder" onClick={toggle} />
+        <NavbarToggler className="no-border" onClick={toggle} />
 
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto nav white-bg" navbar>
             <NavItem>
-              <Link className = "nav-link" to="/ai">
-                <NavLink >AI</NavLink>
+              <Link className="nav-link" to="/ai">
+                AI
               </Link>
             </NavItem>
             <NavItem>
-              <Link className = "nav-link" to="/mr">
-                <NavLink >MR</NavLink>
+              <Link className="nav-link" to="/mr">
+                MR
               </Link>
             </NavItem>
             <NavItem>
-              <Link className = "nav-link" to="/uavs">
-                <NavLink >UAVs</NavLink>
+              <Link className="nav-link" to="/uavs">
+                UAVs
               </Link>
             </NavItem>
             <NavItem>
-              <Link className = "nav-link" to="/tefrica">
-                <NavLink >Tefrica</NavLink>
+              <Link className="nav-link" to="/tefrica">
+                Tefrica
               </Link>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
@@ -102,15 +100,17 @@ const Example = (props) => {
                 Options
               </DropdownToggle>
               <DropdownMenu>
-                <DropdownItem>
+                {/* <DropdownItem>
                   Young Techie
                 </DropdownItem>
                 <DropdownItem>
                   Tech for social good
                 </DropdownItem>
-                <DropdownItem divider />
+                <DropdownItem divider /> */}
                 <DropdownItem>
-                  Report an issue
+                  <Link to="/report-issue">
+                    Report an issue
+                  </Link>
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>

@@ -1,6 +1,8 @@
 module.exports = {
   plugins: [
-    
+     
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -8,6 +10,7 @@ module.exports = {
         name: 'posts',
       },
     },
+    
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -29,7 +32,6 @@ module.exports = {
         ]
       }
     },
-    `gatsby-transformer-sharp`, 
-    `gatsby-plugin-sharp`,
+    
   ],
 }
