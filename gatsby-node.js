@@ -14,6 +14,7 @@ exports.createPages = async ({ actions, graphql }) => {
               tags
               templateKey
               path
+              category
             }
             id
           }

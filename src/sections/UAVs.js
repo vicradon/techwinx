@@ -24,7 +24,7 @@ const UAVs = () => {
           <PostCard />
           <PostCard />
         </PostCarousel>
-        <Link to = "uavs" className = "center mt-3"><Button outline color = "primary">All UAV posts</Button></Link>
+        <Link to = "/uavs" className = "center mt-3"><Button outline color = "primary">All UAV posts</Button></Link>
       </div>
     </section>
   )

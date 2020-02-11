@@ -56,12 +56,12 @@ export default function Footer() {
           }
         `}
       </style>
-      <Link to = "./write-for-us" className="write-for-us">Write for us</Link>
+      <Link to = "/write-for-us" className="write-for-us">Write for us</Link>
 
       <div className="footer-links">
-        <Link to = "./about">About</Link>
-        <Link to = "./contact">Contact</Link>
-        <Link to = "./credits">Credits</Link>
+        <Link to = "/about">About</Link>
+        <Link to = "/contact">Contact</Link>
+        <Link to = "/credits">Credits</Link>
         {/* <Link to = "./privacy">Privacy</Link> */}
       </div>
 

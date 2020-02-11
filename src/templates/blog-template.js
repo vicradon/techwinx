@@ -7,7 +7,10 @@ import { Row, Col } from 'reactstrap'
 
 const BlogPostTemplate = ({ data }) => {
   const { markdownRemark: post } = data
-  console.log(data)
+  const  categoryPosts = data.allMarkdownRemark.edges;
+
+  console.log();
+  
   return (
     <Layout>
       <style>
@@ -62,8 +65,11 @@ const BlogPostTemplate = ({ data }) => {
           }
           .more-section a {
             font-size:1.2em;
-            color: lightblue;
+            color: var(--header-blue);
             cursor: pointer;
+          }
+          .more-section a:not(:last-child) {
+            margin-bottom:0.5rem;
           }
           @media(max-width:450px){
             .markdown-content p {
@@ -90,13 +96,17 @@ const BlogPostTemplate = ({ data }) => {
         <Row>
           <Col xl="9" l="12">
             <div className="markdown-content" dangerouslySetInnerHTML={{ __html: post.html }} />
-            <p className="post-last-edit">Last edited {post.frontmatter.date}</p>
+            <p className="post-last-edit">Last edited {post.parent.modifiedTime}</p>
           </Col>
           <Col xl="3" l="12">
             <div className="more-section center-column">
               <h3>More {post.frontmatter.category_name}</h3>
-              <a>Dummy Stuff</a>
-              <p>More</p>
+              {
+                categoryPosts.map(x => {
+                  const a = x.node.frontmatter;
+                  return <Link to = {a.path}>{a.title}</Link>
+                })
+              }
             </div>
           </Col>
         </Row>
@@ -116,22 +126,36 @@ const BlogPostTemplate = ({ data }) => {
 export default BlogPostTemplate;
 
 export const pageQuery = graphql`
-  query BlogPostByID($id: String!) {
-    markdownRemark(id: {eq: $id}) {
-      id
-      html
-      frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        title
-        tags
-        category
-        category_name
-        author
+query BlogPostByID($id: String!, $category: String!) {
+  markdownRemark(id: {eq: $id}) {
+    id
+    html
+    frontmatter {
+      category_name
+      date(formatString: "MMMM DD, YYYY")
+      title
+      tags
+      category
+      category_name
+      author
+    }
+    parent {
+      ... on File {
+        modifiedTime(fromNow: true)
       }
     }
   }
-
-  
+  allMarkdownRemark(limit: 10, sort: {order: DESC, fields: id}, filter: {frontmatter: {category: {eq: $category}}}) {
+    edges {
+      node {
+        frontmatter {
+          path
+          title
+        }
+      }
+    }
+  }
+}
 `
 
 // query MorePosts($category: String!){
