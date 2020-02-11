@@ -62,7 +62,7 @@ const Contact = (props) => {
           }
         `}
       </style>
-      <Container className="mt-4">
+      <Container className="pt-5">
         <TextContent />
         <WriteForUsForm />
 

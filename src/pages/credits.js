@@ -10,7 +10,7 @@ const Credits = () => {
           
         `}
       </style>
-      <Container className="mt-4">
+      <Container className="pt-5">
         <h1 className = "header-blue">Credits and Appreciation</h1>
         <p>Techwinx.com is built using the Gatsby PWA generator and hosted on Netlify. Special thanks goes to the folk @gatsby for building an intuitive product</p>
 

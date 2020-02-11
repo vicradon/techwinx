@@ -65,6 +65,18 @@ const BlogPostTemplate = ({ data }) => {
             color: lightblue;
             cursor: pointer;
           }
+          @media(max-width:450px){
+            .markdown-content p {
+              font-size:15px;
+            }
+            .post-heading {
+              font-size:2em;
+            }
+            .more-section {
+              margin-top:1rem;
+
+            }
+          }
       `}
       </style>
 
@@ -80,7 +92,7 @@ const BlogPostTemplate = ({ data }) => {
             <div className="markdown-content" dangerouslySetInnerHTML={{ __html: post.html }} />
             <p className="post-last-edit">Last edited {post.frontmatter.date}</p>
           </Col>
-          <Col xl="3" l = "12">
+          <Col xl="3" l="12">
             <div className="more-section center-column">
               <h3>More {post.frontmatter.category_name}</h3>
               <a>Dummy Stuff</a>

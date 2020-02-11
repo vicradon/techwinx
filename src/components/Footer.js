@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 
 export default function Footer() {
@@ -55,13 +56,13 @@ export default function Footer() {
           }
         `}
       </style>
-      <a href = "./write-for-us" className="write-for-us">Write for us</a>
+      <Link to = "./write-for-us" className="write-for-us">Write for us</Link>
 
       <div className="footer-links">
-        <a href = "./about">About</a>
-        <a href = "./contact">Contact</a>
-        <a href = "./credits">Credits</a>
-        {/* <a href = "./privacy">Privacy</a> */}
+        <Link to = "./about">About</Link>
+        <Link to = "./contact">Contact</Link>
+        <Link to = "./credits">Credits</Link>
+        {/* <Link to = "./privacy">Privacy</Link> */}
       </div>
 
       <p>Content and graphics © 2020</p>

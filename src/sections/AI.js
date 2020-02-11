@@ -2,7 +2,7 @@ import React from 'react';
 import PostCarousel from '../components/PostCarousel';
 import PostCard from '../components/PostCard';
 import { Button } from 'reactstrap';
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
 
 const AI = () => {
@@ -49,7 +49,7 @@ const AI = () => {
             />)
           }
         </PostCarousel>
-        <p className="center mt-3"><Button outline color="primary">All AI posts</Button></p>
+        <Link to = "/ai" className="center mt-3"><Button outline color="primary">All AI posts</Button></Link>
       </div>
     </section>
   )

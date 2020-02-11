@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 const PostsContainer = ({ children, name }) => {
   return (
     <Layout>
-      <section className="section">
+      <section className="section pt-5">
         <style>
           {`
           .posts-container {
