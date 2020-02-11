@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import { Container, Row, Col, CardImg, Card } from 'reactstrap';
+import { Container, Row, Col, CardImg, Card, CardBody, CardTitle, CardText } from 'reactstrap';
 
 const About = () => {
   return (
@@ -22,8 +22,10 @@ const About = () => {
               <Card>
                 <CardImg src = "" />
                 <CardBody>
-                  <CardTitle className="techwinx-card-title">{props.title} </CardTitle>
-                  <CardText>{props.content} </CardText>
+                  <CardTitle className="techwinx-card-title">Innocent Emmaunuel Chinedu</CardTitle>
+                  <CardText>
+                    <p>CHukwujama Osinachi Victor</p>
+                  </CardText>
                 </CardBody>
               </Card>
             </Col>
