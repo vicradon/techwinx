@@ -1,3 +1,6 @@
 :root {
   --header-blue:#3A9FBF
 }
+a:hover {
+  text-decoration: none !important;
+}

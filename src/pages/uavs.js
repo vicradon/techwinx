@@ -10,7 +10,7 @@ const UAVsCategory = ({ data }) => {
     <PostsContainer name = "UAVs">
       <style>
         {`
-        
+         
       `}
       </style>
       {

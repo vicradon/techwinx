@@ -23,6 +23,11 @@ const Example = (props) => {
     <div>
       <style>
         {`
+          .techwinx-navbar {
+            position:fixed;
+            width:100%;
+            z-index:1;
+          }
           .nav-items-justified-right {
             display:flex;
             justify-content:right;
@@ -48,6 +53,12 @@ const Example = (props) => {
           .nav-link {
             padding:0 0.2rem !important;
           }
+          @media(min-width:760px){
+            .techwinx-navbar {
+              padding-top:1rem !important;
+              padding-bottom:1rem !important;
+            }
+          }
           @media(max-width:1000px){
             .px-20 {
               padding: 8px 7rem;
@@ -58,15 +69,18 @@ const Example = (props) => {
               padding: 8px 2rem;
             }
             .white-bg {
-              background-color:whitesmoke;
+              background-color:white;
             }
             .nav-link {
               padding:0.2rem !important;
             }
+            .drop-menu {
+              margin-bottom:1rem;
+            }
           }
         `}
       </style>
-      <Navbar className="px-20 lb" color="light" light expand="md">
+      <Navbar className="px-20 lb techwinx-navbar" color="light" light expand="md">
 
         <Link to="/">Techwinx</Link>
 
@@ -99,7 +113,7 @@ const Example = (props) => {
               <DropdownToggle nav caret>
                 Options
               </DropdownToggle>
-              <DropdownMenu>
+              <DropdownMenu className = "drop-menu">
                 {/* <DropdownItem>
                   Young Techie
                 </DropdownItem>

@@ -7,15 +7,14 @@ const About = () => {
     <Layout>
       <style>
         {`
-          .core-team-layout {
-          }
+          
         `}
       </style>
-      <Container className="mt-4">
-        <h1>About Techwinx</h1>
+      <Container className="pt-5">
+        <h1 className = "header-blue">About Techwinx</h1>
         <p>Techwinx is a platform which explores technology with focus on Africa. We aim to enhance Africa's technical know how and also bring more innovators into the tech ecosystem</p>
 
-        <h2>Core team</h2>
+        <h2 className = "header-blue">Core team</h2>
         <div className="core-team-layout">
           <Row>
             <Col>

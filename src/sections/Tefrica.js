@@ -2,6 +2,7 @@ import React from 'react';
 import PostCard from '../components/PostCard';
 import PostCarousel from '../components/PostCarousel';
 import { Button } from 'reactstrap';
+import { Link } from 'gatsby';
 
 const Tefrica = () => {
    return (
@@ -19,7 +20,7 @@ const Tefrica = () => {
           <PostCard/>
           <PostCard />
         </PostCarousel>
-        <p className = "center mt-3"><Button outline color = "primary">All Tefrica posts</Button></p>
+        <Link to = "/tefrica" className = "center mt-3"><Button outline color = "primary">All Tefrica posts</Button></Link>
       </div>
     </section>
   )

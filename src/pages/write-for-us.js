@@ -35,7 +35,7 @@ const WriteForUsForm = () => {
 const TextContent = () => {
   return (
     <div>
-      <h1>We need collaborators</h1>
+      <h1 className = "header-blue">We need collaborators</h1>
       <p>We are always on the lookout for content creators. If you are interested in tech and would like to get your name out there, feel free to fill the form and contact us.</p>
     </div>
   )
@@ -62,7 +62,7 @@ const WriteForUs = (props) => {
           }
         `}
       </style>
-      <Container className="mt-4">
+      <Container className="pt-5">
         <TextContent />
         <WriteForUsForm />
 
