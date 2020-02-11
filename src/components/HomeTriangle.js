@@ -6,6 +6,9 @@ export default function HomeTriangle() {
       <style>
         {
           `
+            .triangle-container {
+              padding-top:2rem;
+            }
             .triangle {
               -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 65%, 50% 100%, 0 65%, 0 0);
               clip-path: polygon(50% 0%, 100% 0, 100% 65%, 50% 100%, 0 65%, 0 0);

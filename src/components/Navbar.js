@@ -3,10 +3,8 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
@@ -23,6 +21,11 @@ const Example = (props) => {
     <div>
       <style>
         {`
+          .techwinx-navbar {
+            position:fixed;
+            width:100%;
+            z-index:1;
+          }
           .nav-items-justified-right {
             display:flex;
             justify-content:right;
@@ -41,12 +44,18 @@ const Example = (props) => {
           nav *:hover {
             color:grey;
           }
-          .noborder {
+          .no-border {
             border:none;
             outline:none !important;
           }
           .nav-link {
             padding:0 0.2rem !important;
+          }
+          @media(min-width:760px){
+            .techwinx-navbar {
+              padding-top:1rem !important;
+              padding-bottom:1rem !important;
+            }
           }
           @media(max-width:1000px){
             .px-20 {
@@ -58,59 +67,62 @@ const Example = (props) => {
               padding: 8px 2rem;
             }
             .white-bg {
-              background-color:whitesmoke;
+              background-color:white;
             }
             .nav-link {
               padding:0.2rem !important;
             }
+            .drop-menu {
+              margin-bottom:1rem;
+            }
           }
         `}
       </style>
-      <Navbar className="px-20 lb" color="light" light expand="md">
+      <Navbar className="px-20 lb techwinx-navbar" color="light" light expand="md">
 
-        <Link to="/">
-          <NavbarBrand>Techwinx</NavbarBrand>
-        </Link>
+        <Link to="/">Techwinx</Link>
 
 
-        <NavbarToggler className="noborder" onClick={toggle} />
+        <NavbarToggler className="no-border" onClick={toggle} />
 
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto nav white-bg" navbar>
             <NavItem>
-              <Link className = "nav-link" to="/ai">
-                <NavLink >AI</NavLink>
+              <Link className="nav-link" to="/ai">
+                AI
               </Link>
             </NavItem>
             <NavItem>
-              <Link className = "nav-link" to="/mr">
-                <NavLink >MR</NavLink>
+              <Link className="nav-link" to="/mr">
+                MR
               </Link>
             </NavItem>
             <NavItem>
-              <Link className = "nav-link" to="/uavs">
-                <NavLink >UAVs</NavLink>
+              <Link className="nav-link" to="/uavs">
+                UAVs
               </Link>
             </NavItem>
             <NavItem>
-              <Link className = "nav-link" to="/tefrica">
-                <NavLink >Tefrica</NavLink>
+              <Link className="nav-link" to="/tefrica">
+                Tefrica
               </Link>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
                 Options
               </DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem>
+              <DropdownMenu className = "drop-menu">
+                {/* <DropdownItem>
                   Young Techie
                 </DropdownItem>
                 <DropdownItem>
                   Tech for social good
                 </DropdownItem>
-                <DropdownItem divider />
+                <DropdownItem divider /> */}
                 <DropdownItem>
-                  Report an issue
+                  <Link to="/report-issue">
+                    Report an issue
+                  </Link>
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>

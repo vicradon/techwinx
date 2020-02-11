@@ -1,11 +1,15 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 
 export default function Footer() {
   return (
+    <>
+    <p style = {{marginTop:"15rem"}}></p>
     <div className="techwinx-footer">
       <style>
         {`
+          
           .techwinx-footer {
             text-align:center;
             background-color:lightblue;
@@ -21,6 +25,10 @@ export default function Footer() {
             padding:0.5rem;
             cursor:pointer;
           }
+          .write-for-us:hover {
+            text-decoration:none;
+            color:#3A9FBF;
+          }
           .footer-links {
             display:flex;
             justify-content:center;
@@ -34,6 +42,7 @@ export default function Footer() {
           }
           .footer-links a:hover {
             color:#3A9FBF;
+            text-decoration:none;
           }
           @media(max-width:750px){
             .footer-links {
@@ -47,16 +56,17 @@ export default function Footer() {
           }
         `}
       </style>
-      <a href = "./write-for-us" className="write-for-us">Write for us</a>
+      <Link to = "/write-for-us" className="write-for-us">Write for us</Link>
 
       <div className="footer-links">
-        <a href = "./about">About</a>
-        <a href = "./contact">Contact</a>
-        <a href = "./credits">Credits</a>
-        <a href = "./privacy">Privacy</a>
+        <Link to = "/about">About</Link>
+        <Link to = "/contact">Contact</Link>
+        <Link to = "/credits">Credits</Link>
+        {/* <Link to = "./privacy">Privacy</Link> */}
       </div>
 
       <p>Content and graphics © 2020</p>
     </div>
+    </>
   )
 }

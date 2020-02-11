@@ -22,6 +22,9 @@ export default function Layout({ children }) {
             .text-center {
               text-align: center;
             }
+            .header-blue {
+              color:#3A9FBF;
+            }
             body {
               font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
             }

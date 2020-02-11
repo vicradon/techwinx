@@ -14,6 +14,7 @@ exports.createPages = async ({ actions, graphql }) => {
               tags
               templateKey
               path
+              category
             }
             id
           }
@@ -31,6 +32,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
   posts.forEach(edge => {
     const id = edge.node.id
+    const category = edge.node.frontmatter.category
     createPage({
       path: edge.node.frontmatter.path,
       tags: edge.node.frontmatter.tags,
@@ -40,9 +42,13 @@ exports.createPages = async ({ actions, graphql }) => {
       // additional data can be passed via context
       context: {
         id,
+        category
       },
     })
   })
+
+ 
+  
 
   /*
   // Tag pages:
@@ -69,4 +75,19 @@ exports.createPages = async ({ actions, graphql }) => {
     })
   })
   */
+}
+
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+
+  const typeDefs = `
+    type MarkdownRemark implements Node {
+      frontmatter: Frontmatter
+    }
+    type Frontmatter {
+      featuredImage: File @fileByRelativePath
+    }
+  `
+  createTypes(typeDefs)
 }

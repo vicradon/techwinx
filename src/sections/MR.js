@@ -3,7 +3,7 @@ import vrEmoji from '../images/vr-emoji.webp';
 import PostCard from '../components/PostCard';
 import PostCarousel from '../components/PostCarousel';
 import { Button } from 'reactstrap';
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
 
 const MR = () => {
@@ -55,7 +55,7 @@ const MR = () => {
             posts.map((x, i) => <PostCard key = {i} title = {x.node.frontmatter.title} content = {x.node.excerpt} path = {x.node.frontmatter.path} />)
           }
         </PostCarousel>
-        <p className="center mt-3"><Button outline color="primary">All MR posts</Button></p>
+        <Link to = "/mr" className="center mt-3"><Button outline color="primary">All MR posts</Button></Link>
       </div>
     </section>
   )
