@@ -2,14 +2,10 @@ import React, { useState } from 'react';
 import { Col, Row, Button, Form, FormGroup, Label, Input, Container } from 'reactstrap';
 import Layout from '../components/Layout';
 import TechwinxAlert from '../components/TechwinxAlert';
+import encode from '../utils/encode';
 
 const ReportIssueForm = () => {
   const [on, setOn] = useState(false)
-  const encode = (data) => {
-    return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&");
-  }
 
   const initialState = {
     email: '',
@@ -27,6 +23,7 @@ const ReportIssueForm = () => {
     })
       .then(() => {
         setOn(true)
+        setTimeout(() => setOn(false), 3000);
         setFormState(initialState)
         console.log("Success!")
       })
