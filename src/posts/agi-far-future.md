@@ -9,7 +9,7 @@ featuredImage: ../img-uploads/gans.png
 featured: true
 category: ai
 category_name: AI
-last_edited: 
+last_edit_date: 
 ---
 > AGI isn't coming anytime soon. This is an obvious fact because the infraustrure necessary to construct one isn't yet available. Right now, several pieces of the future AGI are being constructued and build. But the whole structure hasn't achieved unity
 
