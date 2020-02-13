@@ -3,46 +3,55 @@ import { Col, Row, Button, Form, FormGroup, Label, Input, Container } from 'reac
 import Layout from '../components/Layout';
 
 const ReportIssueForm = () => {
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  }
+
   const initialState = {
-    email:'',
-    name:'',
-    issue:''
+    email: '',
+    name: '',
+    issue: ''
   }
   const [formState, setFormState] = useState(initialState);
   const handleSubmit = event => {
     event.preventDefault();
-    const t = str => event.target[str].value;
-    setFormState({
-      issue:t('issue-report'),
-      name:t('name'),
-      email:t('email')
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "report-issue", formState })
     })
+      .then(() => console.log("Success!"))
+      .catch(error => console.log(error));
   }
 
+  const handleChange = e => setFormState({ ...formState, [e.target.name]: e.target.value });
+
   return (
-    <Form onSubmit = {handleSubmit} name="report-issue" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="report-issue" />
+    <Form onSubmit={handleSubmit} name="report-issue" method="post" data-netlify="true" netlify-honeypot="bot-field">
+      <input style={{ visibility: "hidden", padding: "0", margin: "0", height: "1px" }} name="bot-field" />
       <Row form>
         <Col md={6}>
           <FormGroup>
             <Label for="exampleEmail">Email</Label>
-            <Input required type="email" name="email" id="exampleEmail" placeholder="john@wick.com" />
+            <Input onChange={handleChange} value={formState.email} required type="email" name="email" id="exampleEmail" placeholder="john@wick.com" />
           </FormGroup>
         </Col>
         <Col md={6}>
           <FormGroup>
             <Label for="potentialWriterName">Your Name</Label>
-            <Input required type="text" name="name" id="potentialWriterName" placeholder="John Wick" />
+            <Input onChange={handleChange} value={formState.name} required type="text" name="name" id="potentialWriterName" placeholder="John Wick" />
           </FormGroup>
         </Col>
         <Col sm={12}>
           <FormGroup>
             <Label for="potentialWriterName">What's the issue</Label>
-            <textarea required name="issue-report" className="textarea" />
+            <textarea onChange={handleChange} value={formState.issue} required name="issue" className="textarea" />
           </FormGroup>
         </Col>
       </Row>
-
 
       <Button>Send details</Button>
     </Form>

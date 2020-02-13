@@ -1,8 +1,7 @@
 import React from 'react';
-import Img from "gatsby-image"
 import {
   Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle
+  CardTitle
 } from 'reactstrap';
 import cardImg from '../images/318x180.svg';
 import { Link } from 'gatsby';
@@ -28,8 +27,8 @@ const PostCard = (props) => {
         <Card>
           {
             props.image ?
-              <CardImg key = {new Date().toDateString()} top width="100%" src={props.image} alt="Stuff" />:
-              <CardImg key = {new Date().toDateString()} top width="100%" src={cardImg} alt="Stuff" />
+              <CardImg key = {new Date()} top width="100%" src={props.image} alt="Stuff" />:
+              <CardImg key = {new Date()} top width="100%" src={cardImg} alt="Stuff" />
           }
           <CardBody>
             <CardTitle className="techwinx-card-title">{props.title} </CardTitle>
