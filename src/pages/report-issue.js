@@ -27,6 +27,7 @@ const ReportIssueForm = () => {
     })
       .then(() => {
         setOn(true)
+        setFormState(initialState)
         console.log("Success!")
       })
       .catch(error => console.log(error));
@@ -63,7 +64,7 @@ const ReportIssueForm = () => {
       </Form>
       {
         on ?
-          <p className = "mt-3"><TechwinxAlert message="Submitted successfully" color="info" /></p> :
+          <div className = "mt-3"><TechwinxAlert message="Submitted successfully" color="info" /></div> :
           ''
       }
     </>
