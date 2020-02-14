@@ -2,6 +2,7 @@ import React from 'react'
 import PostCarousel from '../components/PostCarousel'
 import PostCard from '../components/PostCard'
 import { useStaticQuery, graphql } from 'gatsby'
+import mapPosts from '../utils/mapPosts'
 
 const TopPosts = () => {
   const data = useStaticQuery(graphql`
@@ -39,13 +40,7 @@ const TopPosts = () => {
         <h3 className="center"><span aria-label="jsx-a11y" role="img">🏆</span> Top Posts</h3>
         <PostCarousel>
           {
-            posts.map((x, i) => <PostCard
-              key={i}
-              title={x.node.frontmatter.title}
-              image={x.node.frontmatter.featuredImage.childImageSharp.fluid.src || ''}
-              content={x.node.excerpt}
-              path={x.node.frontmatter.path}
-            />)
+            mapPosts(posts)
           }
         </PostCarousel>
       </div>
