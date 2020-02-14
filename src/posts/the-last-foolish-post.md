@@ -16,6 +16,6 @@ category_name: Tefrica
 Hiya bro
 
 This is the last foolish post
-
+[stuff](/a_diff_sun.PNG)
 
 > Fools
