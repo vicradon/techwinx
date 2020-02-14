@@ -12,12 +12,15 @@ collections:
     folder: src/posts
     create: true
     fields:
-      - { name: path, label: Path }
+      - { name: title, label: Title }
       - { name: date, label: Date, widget: datetime }
       - { name: last_edit_date, label: Last Edited, widget: datetime }
-      - { name: title, label: Title }
-      - { name: body, label: Body, widget: markdown }
-      - { name: tags, label: Tags, widget: select, options: ["ai", "mr", "uavs", "tefrica", "vr"]  }
-      - { name: author, label: Author }
+      - { name: path, label: Path }
+      - { name: tags, label: Tags, widget: checkbox, options: ["ai", "mr", "uavs", "tefrica", "vr"]  }
       - { name: templateKey, label: Template Key, widget: select, options: ["blog-template"]}
+      - { name: author, label: Author }
+      - { name: featuredImage, label: Featured Image }
+      - { name: featured, label: Featured,  widget: select, options: [true, false]}
       - { name: category, label: Category, widget: select, options: ["ai", "mr", "uavs", "tefrica"] }
+      - { name: category_name, label: Category Name, widget: select, options: ["AI", "MR", "UAVs", "Tefrica"] }
+      - { name: body, label: Body, widget: markdown }
