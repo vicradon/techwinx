@@ -8,6 +8,8 @@ author: Ralph
 templateKey: blog-template
 category: mr
 ---
+![some alt text](/img-uploads/a_diff_sun.PNG "A diff sun")
+
 Some bunch of text
 
 > Some text isn't justifiable
