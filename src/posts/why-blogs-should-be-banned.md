@@ -8,8 +8,8 @@ author: Ralph
 templateKey: blog-template
 category: ai
 ---
-\> They shouldn't exist
+> They shouldn't exist
 
-\## How was it
+## How was it
 
 The course makes no sense
