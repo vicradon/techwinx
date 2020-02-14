@@ -7,9 +7,9 @@ media_folder: src/img-uploads
 public_folder: /img-uploads
 
 collections:
-  - name: blog
-    label: Blog
-    folder: blog
+  - name: Blog-Posts
+    label: Blog-Posts
+    folder: src/posts
     create: true
     fields:
       - { name: path, label: Path }
