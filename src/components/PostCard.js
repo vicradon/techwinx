@@ -28,7 +28,7 @@ const PostCard = (props) => {
           {
             props.image ?
               <CardImg key = {new Date()} top width="100%" src={props.image} alt="Stuff" />:
-              <CardImg key = {new Date()} top width="100%" src={cardImg} alt="Stuff" />
+              ''
           }
           <CardBody>
             <CardTitle className="techwinx-card-title">{props.title} </CardTitle>
