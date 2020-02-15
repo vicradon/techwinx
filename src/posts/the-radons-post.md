@@ -9,7 +9,7 @@ tags:
   - levitation
 templateKey: blog-template
 author: The Radon
-featuredImage: /img-uploads/images.jpeg
+featuredImage: /img-uploads/water gen.PNG
 featured: false
 category: uavs
 category_name: UAVs
@@ -18,3 +18,4 @@ category_name: UAVs
 
 
 So, this is a blog
+No, it is actually the blog!
