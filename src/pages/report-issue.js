@@ -18,7 +18,7 @@ const ReportIssueForm = () => {
   const handleSubmit = event => {
     event.preventDefault();
 
-    fetch("/", {
+    fetch("/report-issue", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "report-issue", ...formState })
