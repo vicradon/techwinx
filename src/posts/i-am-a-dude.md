@@ -8,7 +8,7 @@ tags:
   - vr
 templateKey: blog-template
 author: Ralph
-featuredImage: /src/img-uploads/gans.png
+featuredImage: ../img-uploads/gans.png
 featured: true
 category: ai
 category_name: AI

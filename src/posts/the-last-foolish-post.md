@@ -8,7 +8,7 @@ tags:
   - foolish
 templateKey: blog-template
 author: The last fool
-featuredImage: /img-uploads/a_diff_sun.PNG
+featuredImage: ../img-uploads/a_diff_sun.PNG
 featured: true
 category: tefrica
 category_name: Tefrica
@@ -16,6 +16,6 @@ category_name: Tefrica
 Hiya bro
 
 This is the last foolish post
-[stuff](/a_diff_sun.PNG)
+![stuff](../img-uploads/a_diff_sun.PNG)
 
 > Fools
