@@ -14,7 +14,7 @@ featured: false
 category: uavs
 category_name: UAVs
 ---
-![k](/img-uploads/a_diff_sun.PNG)
+![k](../img-uploads/a_diff_sun.PNG)
 
 
 So, this is a blog
