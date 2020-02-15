@@ -3,7 +3,7 @@ backend:
   name: github
   repo: vicradon/techwinx
 
-media_folder: ../img-uploads
+media_folder: src/img-uploads
 public_folder: /img-uploads
 
 collections:
