@@ -22,7 +22,7 @@ const ReportIssueForm = () => {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "report-issue", ...formState })
+      body: encode({ "form-name": "report-issue-form", ...formState })
     })
       .then(() => {
         setOn(true)
