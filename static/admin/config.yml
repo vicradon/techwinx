@@ -1,7 +1,7 @@
 backend:
-  name: test-repo
-  # name: github
-  # repo: vicradon/techwinx
+  # name: test-repo
+  name: github
+  repo: vicradon/techwinx
 
 media_folder: ../img-uploads
 public_folder: /img-uploads
