@@ -46,19 +46,19 @@ const WriteForUsForm = () => {
         <Row form>
           <Col md={6}>
             <FormGroup>
-              <Label for="writeForUsEmail">Email</Label>
+              <Label for="writeForUsEmail">email</Label>
               <Input onChange={handleChange} value={formState.email} type="email" name="email" id="writeForUsEmail" placeholder="john@wick.com" />
             </FormGroup>
           </Col>
           <Col md={6}>
             <FormGroup>
-              <Label for="potentialWriterName">Your Name</Label>
+              <Label for="potentialWriterName">name</Label>
               <Input onChange={handleChange} value={formState.name} type="text" name="name" id="potentialWriterName" placeholder="John Wick" />
             </FormGroup>
           </Col>
           <Col sm={12}>
             <FormGroup>
-              <Label for="selfid">Tell us a bit about you</Label>
+              <Label for="selfid">message</Label>
               <textarea onChange={handleChange} value={formState.message} required name="message" className="textarea" id = "selfid" />
             </FormGroup>
           </Col>
