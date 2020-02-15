@@ -15,10 +15,11 @@ const ReportIssueForm = () => {
     "What's the issue": ''
   }
   const [formState, setFormState] = useState(initialState);
+
   const handleSubmit = event => {
     event.preventDefault();
 
-    fetch("/report-issue", {
+    fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "report-issue", ...formState })
@@ -40,8 +41,8 @@ const ReportIssueForm = () => {
 
   return (
     <>
-      <Form onSubmit={handleSubmit} name="report-issue" method="post" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="report-issue" />
+      <Form onSubmit={handleSubmit} name="report-issue-form" method="post" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="report-issue-form" />
         <input style={{ visibility: "hidden", padding: "0", margin: "0", height: "1px" }} name="bot-field" />
         <Row form>
           <Col md={6}>

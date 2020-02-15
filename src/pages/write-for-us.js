@@ -15,6 +15,7 @@ const WriteForUsForm = () => {
     "Tell us a bit about you": ''
   }
   const [formState, setFormState] = useState(initialState);
+  
   const handleSubmit = event => {
     event.preventDefault();
 

@@ -13,14 +13,15 @@ const ContactForm = () => {
 
   const initialState = {
     "Email": '',
-    "Your Name": '',
+    "Your name": '',
     "Your message": ''
   }
   const [formState, setFormState] = useState(initialState);
+
   const handleSubmit = event => {
     event.preventDefault();
 
-    fetch("/contact", {
+    fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact-form", ...formState })
@@ -48,14 +49,14 @@ const ContactForm = () => {
         <Row form>
           <Col md={6}>
             <FormGroup>
-              <Label for="exampleEmail">Email</Label>
-              <Input onChange={handleChange} value={formState["Email"]} type="email" name="Email" id="exampleEmail" placeholder="john@wick.com" />
+              <Label for="contactEmail">Email</Label>
+              <Input onChange={handleChange} value={formState["Email"]} type="email" name="Email" id="contactEmail" placeholder="john@wick.com" />
             </FormGroup>
           </Col>
           <Col md={6}>
             <FormGroup>
-              <Label for="potentialWriterName">Your Name</Label>
-              <Input onChange={handleChange} value={formState["Your Name"]} type="text" name="Your Name" id="potentialWriterName" placeholder="John Wick" />
+              <Label for="potentialWriterName">Your name</Label>
+              <Input onChange={handleChange} value={formState["Your name"]} type="text" name="Your name" id="potentialWriterName" placeholder="John Wick" />
             </FormGroup>
           </Col>
           <Col sm={12}>
