@@ -42,26 +42,26 @@ const ContactForm = () => {
 
   return (
     <>
-      <Form onSubmit={handleSubmit} name="contact-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+      <Form onSubmit={handleSubmit} name="contact-form" method="post" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="contact-form" />
         <input style={{ visibility: "hidden", padding: "0", margin: "0", height: "1px" }} name="bot-field" />
         <Row form>
           <Col md={6}>
             <FormGroup>
               <Label for="exampleEmail">Email</Label>
-              <Input onChange={handleChange} value={formState.email} type="email" name="Email" id="exampleEmail" placeholder="john@wick.com" />
+              <Input onChange={handleChange} value={formState["Email"]} type="email" name="Email" id="exampleEmail" placeholder="john@wick.com" />
             </FormGroup>
           </Col>
           <Col md={6}>
             <FormGroup>
               <Label for="potentialWriterName">Your Name</Label>
-              <Input onChange={handleChange} value={formState.name} type="text" name="Your Name" id="potentialWriterName" placeholder="John Wick" />
+              <Input onChange={handleChange} value={formState["Your Name"]} type="text" name="Your Name" id="potentialWriterName" placeholder="John Wick" />
             </FormGroup>
           </Col>
           <Col sm={12}>
             <FormGroup>
               <Label for="potentialWriterName">Your message</Label>
-              <textarea onChange={handleChange} value={formState.self} required name="Your message" className="textarea" />
+              <textarea onChange={handleChange} value={formState["Your message"]} required name="Your message" className="textarea" />
             </FormGroup>
           </Col>
         </Row>
@@ -75,7 +75,7 @@ const ContactForm = () => {
           <div className="mt-3"><TechwinxAlert message="Submitted successfully" color="info" /></div> :
           ''
       }
-        {
+      {
         error ?
           <div className="mt-3"><TechwinxAlert message="An error occured, please, try again" color="info" /></div> :
           ''

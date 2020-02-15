@@ -40,26 +40,26 @@ const ReportIssueForm = () => {
 
   return (
     <>
-      <Form onSubmit={handleSubmit} name="report-issue" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+      <Form onSubmit={handleSubmit} name="report-issue" method="post" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="report-issue" />
         <input style={{ visibility: "hidden", padding: "0", margin: "0", height: "1px" }} name="bot-field" />
         <Row form>
           <Col md={6}>
             <FormGroup>
               <Label for="exampleEmail">Email</Label>
-              <Input onChange={handleChange} value={formState.email} required type="email" name="Email" id="exampleEmail" placeholder="john@wick.com" />
+              <Input onChange={handleChange} value={formState["Email"]} required type="email" name="Email" id="exampleEmail" placeholder="john@wick.com" />
             </FormGroup>
           </Col>
           <Col md={6}>
             <FormGroup>
               <Label for="potentialWriterName">Your Name</Label>
-              <Input onChange={handleChange} value={formState.name} required type="text" name="Your Name" id="potentialWriterName" placeholder="John Wick" />
+              <Input onChange={handleChange} value={formState["Your Name"]} required type="text" name="Your Name" id="potentialWriterName" placeholder="John Wick" />
             </FormGroup>
           </Col>
           <Col sm={12}>
             <FormGroup>
               <Label for="potentialWriterName">What's the issue</Label>
-              <textarea onChange={handleChange} value={formState.issue} required name="What's the issue" className="textarea" />
+              <textarea onChange={handleChange} value={formState["What's the issue"]} required name="What's the issue" className="textarea" />
             </FormGroup>
           </Col>
         </Row>

@@ -47,19 +47,19 @@ const WriteForUsForm = () => {
           <Col md={6}>
             <FormGroup>
               <Label for="writeForUsEmail">Email</Label>
-              <Input onChange={handleChange} value={formState.email} type="email" name="Email" id="writeForUsEmail" placeholder="john@wick.com" />
+              <Input onChange={handleChange} value={formState["Email"]} type="email" name="Email" id="writeForUsEmail" placeholder="john@wick.com" />
             </FormGroup>
           </Col>
           <Col md={6}>
             <FormGroup>
               <Label for="potentialWriterName">Your Name</Label>
-              <Input onChange={handleChange} value={formState.name} type="text" name="Your Name" id="potentialWriterName" placeholder="John Wick" />
+              <Input onChange={handleChange} value={formState["Your Name"]} type="text" name="Your Name" id="potentialWriterName" placeholder="John Wick" />
             </FormGroup>
           </Col>
           <Col sm={12}>
             <FormGroup>
               <Label for="selfid">Tell us a bit about you</Label>
-              <textarea onChange={handleChange} value={formState.message} required name="Tell us a bit about you" className="textarea" id = "selfid" />
+              <textarea onChange={handleChange} value={formState["Tell us a bit about you"]} required name="Tell us a bit about you" className="textarea" id = "selfid" />
             </FormGroup>
           </Col>
         </Row>
