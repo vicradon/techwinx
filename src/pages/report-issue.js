@@ -6,6 +6,8 @@ import encode from '../utils/encode';
 
 const ReportIssueForm = () => {
   const [on, setOn] = useState(false)
+  const [error, setError] = useState(false)
+
 
   const initialState = {
     email: '',
@@ -19,7 +21,7 @@ const ReportIssueForm = () => {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "report-issue", formState })
+      body: encode({ "form-name": "report-issue", ...formState })
     })
       .then(() => {
         setOn(true)
@@ -27,14 +29,19 @@ const ReportIssueForm = () => {
         setFormState(initialState)
         console.log("Success!")
       })
-      .catch(error => console.log(error));
+      .catch(error => {
+        setError(true)
+        setTimeout(() => setError(false), 3000);
+        console.log(error)
+      });
   }
 
   const handleChange = e => setFormState({ ...formState, [e.target.name]: e.target.value });
 
   return (
     <>
-      <Form onSubmit={handleSubmit} name="report-issue" method="post" data-netlify="true" netlify-honeypot="bot-field">
+      <Form onSubmit={handleSubmit} name="report-issue" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="report-issue" />
         <input style={{ visibility: "hidden", padding: "0", margin: "0", height: "1px" }} name="bot-field" />
         <Row form>
           <Col md={6}>
@@ -61,7 +68,12 @@ const ReportIssueForm = () => {
       </Form>
       {
         on ?
-          <div className = "mt-3"><TechwinxAlert message="Submitted successfully" color="info" /></div> :
+          <div className="mt-3"><TechwinxAlert message="Submitted successfully" color="info" /></div> :
+          ''
+      }
+      {
+        error ?
+          <div className="mt-3"><TechwinxAlert message="An error occured, please, try again" color="info" /></div> :
           ''
       }
     </>

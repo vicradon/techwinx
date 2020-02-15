@@ -8,6 +8,8 @@ import TechwinxAlert from '../components/TechwinxAlert';
 
 const ContactForm = () => {
   const [on, setOn] = useState(false)
+  const [error, setError] = useState(false)
+
 
   const initialState = {
     email: '',
@@ -21,7 +23,7 @@ const ContactForm = () => {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact-form", formState })
+      body: encode({ "form-name": "contact-form", ...formState })
     })
       .then(() => {
         setOn(true)
@@ -29,14 +31,20 @@ const ContactForm = () => {
         setFormState(initialState)
         console.log("Success!")
       })
-      .catch(error => console.log(error));
+      .catch(error => {
+        setError(true)
+        setTimeout(() => setError(false), 3000);
+        console.log(error)
+      });
   }
 
   const handleChange = e => setFormState({ ...formState, [e.target.name]: e.target.value });
 
   return (
     <>
-      <Form name = "contact-form" onSubmit = {handleSubmit}>
+      <Form onSubmit={handleSubmit} name="contact-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact-form" />
+        <input style={{ visibility: "hidden", padding: "0", margin: "0", height: "1px" }} name="bot-field" />
         <Row form>
           <Col md={6}>
             <FormGroup>
@@ -65,6 +73,11 @@ const ContactForm = () => {
       {
         on ?
           <div className="mt-3"><TechwinxAlert message="Submitted successfully" color="info" /></div> :
+          ''
+      }
+        {
+        error ?
+          <div className="mt-3"><TechwinxAlert message="An error occured, please, try again" color="info" /></div> :
           ''
       }
     </>
@@ -102,7 +115,7 @@ const Contact = (props) => {
         `}
       </style>
       <Container className="pt-5">
-        <p className="pt-3"></p>
+        <p className="pt-1"></p>
         <TextContent />
         <ContactForm />
 
