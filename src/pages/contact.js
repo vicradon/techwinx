@@ -12,9 +12,9 @@ const ContactForm = () => {
 
 
   const initialState = {
-    email: '',
-    name: '',
-    self: ''
+    "Email": '',
+    "Your Name": '',
+    "Your message": ''
   }
   const [formState, setFormState] = useState(initialState);
   const handleSubmit = event => {
@@ -49,19 +49,19 @@ const ContactForm = () => {
           <Col md={6}>
             <FormGroup>
               <Label for="exampleEmail">Email</Label>
-              <Input onChange={handleChange} value={formState.email} type="email" name="email" id="exampleEmail" placeholder="john@wick.com" />
+              <Input onChange={handleChange} value={formState.email} type="email" name="Email" id="exampleEmail" placeholder="john@wick.com" />
             </FormGroup>
           </Col>
           <Col md={6}>
             <FormGroup>
               <Label for="potentialWriterName">Your Name</Label>
-              <Input onChange={handleChange} value={formState.name} type="text" name="name" id="potentialWriterName" placeholder="John Wick" />
+              <Input onChange={handleChange} value={formState.name} type="text" name="Your Name" id="potentialWriterName" placeholder="John Wick" />
             </FormGroup>
           </Col>
           <Col sm={12}>
             <FormGroup>
               <Label for="potentialWriterName">Your message</Label>
-              <textarea onChange={handleChange} value={formState.self} required name="self" className="textarea" />
+              <textarea onChange={handleChange} value={formState.self} required name="Your message" className="textarea" />
             </FormGroup>
           </Col>
         </Row>

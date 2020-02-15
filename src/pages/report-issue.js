@@ -10,9 +10,9 @@ const ReportIssueForm = () => {
 
 
   const initialState = {
-    email: '',
-    name: '',
-    issue: ''
+    "Email": '',
+    "Your Name": '',
+    "What's the issue": ''
   }
   const [formState, setFormState] = useState(initialState);
   const handleSubmit = event => {
@@ -47,19 +47,19 @@ const ReportIssueForm = () => {
           <Col md={6}>
             <FormGroup>
               <Label for="exampleEmail">Email</Label>
-              <Input onChange={handleChange} value={formState.email} required type="email" name="email" id="exampleEmail" placeholder="john@wick.com" />
+              <Input onChange={handleChange} value={formState.email} required type="email" name="Email" id="exampleEmail" placeholder="john@wick.com" />
             </FormGroup>
           </Col>
           <Col md={6}>
             <FormGroup>
               <Label for="potentialWriterName">Your Name</Label>
-              <Input onChange={handleChange} value={formState.name} required type="text" name="name" id="potentialWriterName" placeholder="John Wick" />
+              <Input onChange={handleChange} value={formState.name} required type="text" name="Your Name" id="potentialWriterName" placeholder="John Wick" />
             </FormGroup>
           </Col>
           <Col sm={12}>
             <FormGroup>
               <Label for="potentialWriterName">What's the issue</Label>
-              <textarea onChange={handleChange} value={formState.issue} required name="issue" className="textarea" />
+              <textarea onChange={handleChange} value={formState.issue} required name="What's the issue" className="textarea" />
             </FormGroup>
           </Col>
         </Row>

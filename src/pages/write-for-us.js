@@ -10,9 +10,9 @@ const WriteForUsForm = () => {
   const [error, setError] = useState(false)
 
   const initialState = {
-    email: '',
-    name: '',
-    message: ''
+    "Email": '',
+    "Your Name": '',
+    "Tell us a bit about you": ''
   }
   const [formState, setFormState] = useState(initialState);
   const handleSubmit = event => {
@@ -46,20 +46,20 @@ const WriteForUsForm = () => {
         <Row form>
           <Col md={6}>
             <FormGroup>
-              <Label for="writeForUsEmail">email</Label>
-              <Input onChange={handleChange} value={formState.email} type="email" name="email" id="writeForUsEmail" placeholder="john@wick.com" />
+              <Label for="writeForUsEmail">Email</Label>
+              <Input onChange={handleChange} value={formState.email} type="email" name="Email" id="writeForUsEmail" placeholder="john@wick.com" />
             </FormGroup>
           </Col>
           <Col md={6}>
             <FormGroup>
-              <Label for="potentialWriterName">name</Label>
-              <Input onChange={handleChange} value={formState.name} type="text" name="name" id="potentialWriterName" placeholder="John Wick" />
+              <Label for="potentialWriterName">Your Name</Label>
+              <Input onChange={handleChange} value={formState.name} type="text" name="Your Name" id="potentialWriterName" placeholder="John Wick" />
             </FormGroup>
           </Col>
           <Col sm={12}>
             <FormGroup>
-              <Label for="selfid">message</Label>
-              <textarea onChange={handleChange} value={formState.message} required name="message" className="textarea" id = "selfid" />
+              <Label for="selfid">Tell us a bit about you</Label>
+              <textarea onChange={handleChange} value={formState.message} required name="Tell us a bit about you" className="textarea" id = "selfid" />
             </FormGroup>
           </Col>
         </Row>
