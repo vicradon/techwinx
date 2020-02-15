@@ -9,7 +9,7 @@ tags:
   - levitation
 templateKey: blog-template
 author: The Radon
-featuredImage: /img-uploads/water gen.PNG
+featuredImage: ../img-uploads/fusion.jpg
 featured: false
 category: uavs
 category_name: UAVs
