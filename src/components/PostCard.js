@@ -21,13 +21,16 @@ const PostCard = (props) => {
             text-decoration:none;
             color:inherit;
           }
+          .post-card-image {
+            max-height: 200px !important;
+          }
         `}
       </style>
       <Link to={props.path || "/404"} className="post-link">
         <Card>
           {
             props.image ?
-              <CardImg key = {new Date()} top width="100%" src={props.image} alt="Stuff" />:
+              <CardImg className = "post-card-image" key = {new Date()} top width="100%" src={props.image} alt="Stuff" />:
               ''
           }
           <CardBody>
