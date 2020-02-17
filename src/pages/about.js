@@ -38,7 +38,7 @@ const About = () => {
                 <CardBody>
                   <CardTitle className="techwinx-card-title">Innocent Emmaunuel Chinedu</CardTitle>
                   <CardText>
-                    <p>Businesss dude, passionate about tech</p>
+                    Businesss dude, passionate about tech
                   </CardText>
                 </CardBody>
               </Card>
@@ -49,7 +49,7 @@ const About = () => {
                 <CardBody>
                   <CardTitle className="techwinx-card-title">Chukwujama Osinachi Victor</CardTitle>
                   <CardText>
-                    <p>Techy dude, passionate about VR</p>
+                    Techy dude, passionate about VR
                   </CardText>
                 </CardBody>
               </Card>
