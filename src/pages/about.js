@@ -13,7 +13,6 @@ const About = () => {
             }
             .team-card {
               width: 300px;
-              // margin: 0 auto;
             }
             .team-image {
             }
