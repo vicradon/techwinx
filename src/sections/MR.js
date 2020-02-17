@@ -1,6 +1,5 @@
 import React from 'react';
 import vrEmoji from '../images/vr-emoji.webp';
-import PostCard from '../components/PostCard';
 import PostCarousel from '../components/PostCarousel';
 import { Button } from 'reactstrap';
 import { useStaticQuery, graphql, Link } from "gatsby"

@@ -1,6 +1,5 @@
 import React from 'react';
 import PostCarousel from '../components/PostCarousel';
-import PostCard from '../components/PostCard';
 import { Button } from 'reactstrap';
 import { useStaticQuery, graphql, Link } from "gatsby"
 import mapPosts from '../utils/mapPosts';

@@ -1,6 +1,5 @@
 import React from 'react'
 import PostCarousel from '../components/PostCarousel'
-import PostCard from '../components/PostCard'
 import { useStaticQuery, graphql } from 'gatsby'
 import mapPosts from '../utils/mapPosts'
 

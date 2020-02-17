@@ -3,7 +3,6 @@ import {
   Card, CardImg, CardText, CardBody,
   CardTitle
 } from 'reactstrap';
-import cardImg from '../images/318x180.svg';
 import { Link } from 'gatsby';
 
 const PostCard = (props) => {
