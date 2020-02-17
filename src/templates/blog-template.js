@@ -1,16 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
+// import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import { Row, Col } from 'reactstrap'
 
 const BlogPostTemplate = ({ data }) => {
   const { markdownRemark: post } = data
-  const  categoryPosts = data.allMarkdownRemark.edges;
+  const categoryPosts = data.allMarkdownRemark.edges;
 
   console.log();
-  
+
   return (
     <Layout>
       <style>
@@ -104,7 +104,7 @@ const BlogPostTemplate = ({ data }) => {
               {
                 categoryPosts.map(x => {
                   const a = x.node.frontmatter;
-                  return <Link to = {a.path}>{a.title}</Link>
+                  return <Link to={a.path}>{a.title}</Link>
                 })
               }
             </div>
@@ -116,13 +116,27 @@ const BlogPostTemplate = ({ data }) => {
     </Layout>
   )
 }
+/*
+BlogPostTemplate.propTypes = {
+  data: propTypes.shape({
+    post: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      html: PropTypes.string.isRequired,
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        category_name: PropTypes.string.isRequired,
+        date: PropTypes.string.isRequired,
+        tags: PropTypes.string.isRequired,
+        category: PropTypes.string.isRequired,
+        category_name: PropTypes.string.isRequired,
+        author: PropTypes.string.isRequired,
+      }).isRequired,
+    }).isRequired,
 
-// BlogPost.propTypes = {
-//   data: PropTypes.shape({
-//     markdownRemark: PropTypes.object,
-//   }),
-// }
+  }).isRequired
+}
 
+*/
 export default BlogPostTemplate;
 
 export const pageQuery = graphql`
@@ -157,16 +171,3 @@ query BlogPostByID($id: String!, $category: String!) {
   }
 }
 `
-
-// query MorePosts($category: String!){
-//   allMarkdownRemark(limit: 5, filter: {frontmatter: {category: {eq: $category}}}) {
-//     edges {
-//       node {
-//         frontmatter {
-//           title
-//           path
-//         }
-//       }
-//     }
-//   }
-// }

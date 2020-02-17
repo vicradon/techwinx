@@ -1,5 +1,4 @@
 const path = require('path')
-const { createFilePath } = require('gatsby-source-filesystem')
 
 
 exports.createPages = async ({ actions, graphql }) => {
@@ -39,7 +38,6 @@ exports.createPages = async ({ actions, graphql }) => {
       component: path.resolve(
         `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
       ),
-      // additional data can be passed via context
       context: {
         id,
         category

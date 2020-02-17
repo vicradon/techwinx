@@ -1,4 +1,13 @@
 module.exports = {
+  siteMetaData: {
+    title: "Techwinx",
+    titleTemplate: "%s : The Repository for Everything Tech",
+    description:
+      "Get global tech info with focus on Africa",
+    baseUrl: "https://www.techwinx.com", // No trailing slash allowed!
+    image: "", // Path to your image you placed in the 'static' folder
+    twitterUsername: "@Techwinx",
+  },
   plugins: [
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
