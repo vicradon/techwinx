@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 const SEO = ({ title, description, image, pathname, article }) => {
-  const data = useStaticQuery(graphql`
+  const seo = useStaticQuery(graphql`
     query SEO {
       site {
         siteMetadata {
@@ -15,9 +15,9 @@ const SEO = ({ title, description, image, pathname, article }) => {
       }
     }
   `);
-  for (let i in data) {
-    if (data[i] === undefined || data[i] === null) {
-      data[i] = ''
+  for (let i in seo) {
+    if (seo[i] === undefined || seo[i] === null) {
+      seo[i] = ''
     }
   }
   return (
