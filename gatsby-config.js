@@ -1,4 +1,9 @@
 module.exports = {
+  siteMetadata: {
+    title: "Techwinx",
+    description:"Bringing you the latest of tech from AI to VR to Tech in Africa",
+    url:"https://techwinx.com"
+  },
   plugins: [
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
