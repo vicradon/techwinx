@@ -1,8 +1,8 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import { Container, Row, Col, CardImg, Card, CardBody, CardTitle, CardText } from 'reactstrap';
-import chineduImage from "../images/chinedu.jpg"
-import ralphImage from "../images/ralph.jpg"
+import chineduImage from "../../static/images/chinedu.jpg"
+import ralphImage from "../../static/images/ralph.jpg"
 
 const About = () => {
   return (
