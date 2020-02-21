@@ -109,7 +109,7 @@ const Example = (props) => {
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
-                Options
+                More
               </DropdownToggle>
               <DropdownMenu className="drop-menu">
                 <DropdownItem>
@@ -131,12 +131,12 @@ const Example = (props) => {
               </DropdownToggle>
               <DropdownMenu className="drop-menu">
                 <DropdownItem>
-                  <Link className="nav-link" to="/howto">
+                  <Link className="nav-link" to="/services/web-dev">
                     Web development
                   </Link>
                 </DropdownItem>
                 <DropdownItem>
-                  <Link className="nav-link" to="/howto">
+                  <Link className="nav-link" to="/services/graphics-design">
                     Graphics design
                   </Link>
                 </DropdownItem>
