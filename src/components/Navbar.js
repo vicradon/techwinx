@@ -111,17 +111,33 @@ const Example = (props) => {
               <DropdownToggle nav caret>
                 Options
               </DropdownToggle>
-              <DropdownMenu className = "drop-menu">
-                {/* <DropdownItem>
-                  Young Techie
-                </DropdownItem>
+              <DropdownMenu className="drop-menu">
                 <DropdownItem>
-                  Tech for social good
+                  <Link className="nav-link" to="/howto">
+                    How-to
+                  </Link>
                 </DropdownItem>
-                <DropdownItem divider /> */}
+                <DropdownItem divider />
                 <DropdownItem>
                   <Link to="/report-issue">
                     Report an issue
+                  </Link>
+                </DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>
+            <UncontrolledDropdown nav inNavbar>
+              <DropdownToggle nav caret>
+                Services
+              </DropdownToggle>
+              <DropdownMenu className="drop-menu">
+                <DropdownItem>
+                  <Link className="nav-link" to="/howto">
+                    Web development
+                  </Link>
+                </DropdownItem>
+                <DropdownItem>
+                  <Link className="nav-link" to="/howto">
+                    Graphics design
                   </Link>
                 </DropdownItem>
               </DropdownMenu>
