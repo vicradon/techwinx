@@ -140,6 +140,11 @@ const Example = (props) => {
                     Graphics design
                   </Link>
                 </DropdownItem>
+                <DropdownItem>
+                  <Link className="nav-link" to="/services/gadgets">
+                    Gadgets
+                  </Link>
+                </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>
