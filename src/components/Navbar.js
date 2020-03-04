@@ -145,6 +145,11 @@ const Example = (props) => {
                     Gadgets
                   </Link>
                 </DropdownItem>
+                <DropdownItem>
+                  <Link className="nav-link" to="/services/gadgets">
+                    SEO/Facebook Ads
+                  </Link>
+                </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>
