@@ -3,6 +3,7 @@ import PostCard from '../components/PostCard';
 import { graphql } from "gatsby"
 // import Layout from '../components/Layout';
 import PostsContainer from '../components/PostsContainer';
+import SEO from '../components/seo/SEO';
 
 const MRCategory = ({ data }) => {
   const posts = data.allMarkdownRemark.edges;
@@ -14,6 +15,7 @@ const MRCategory = ({ data }) => {
         
       `}
       </style>
+      <SEO keywords={["Techwinx", "tca"]} title="MR Section" />
       {
         posts.map((x, i) => {
           let a = '';

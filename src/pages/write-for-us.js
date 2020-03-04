@@ -3,6 +3,7 @@ import { Col, Row, Button, Form, FormGroup, Label, Input, Container } from 'reac
 import Layout from '../components/Layout';
 import encode from '../utils/encode';
 import TechwinxAlert from '../components/TechwinxAlert';
+import SEO from '../components/seo/SEO';
 
 
 const WriteForUsForm = () => {
@@ -94,6 +95,7 @@ const TextContent = () => {
 const WriteForUs = (props) => {
   return (
     <Layout>
+      <SEO keywords={["Techwinx", "tca"]} title="Write for us page" />
       <style>
         {`
           .textarea {

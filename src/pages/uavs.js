@@ -2,6 +2,7 @@ import React from 'react';
 import PostCard from '../components/PostCard';
 import { graphql } from "gatsby"
 import PostsContainer from '../components/PostsContainer';
+import SEO from '../components/seo/SEO';
 
 const UAVsCategory = ({ data }) => {
   const posts = data.allMarkdownRemark.edges;
@@ -13,6 +14,7 @@ const UAVsCategory = ({ data }) => {
          
       `}
       </style>
+      <SEO keywords={["Techwinx", "tca"]} title="UAVs section" />
       {
         posts.map((x, i) => {
           let a = '';

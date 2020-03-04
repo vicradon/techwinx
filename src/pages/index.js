@@ -7,9 +7,11 @@ import AI from "../sections/AI";
 import MR from "../sections/MR";
 import UAVs from "../sections/UAVs";
 import Tefrica from "../sections/Tefrica";
+import SEO from "../components/seo/SEO";
 
 const Index = () => (
   <Layout>
+    <SEO keywords={["Techwinx", "tca"]} title="Home" />
     <HomeTriangle />
     <TopPosts />
     <AI />

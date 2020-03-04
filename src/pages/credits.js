@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import { Container } from 'reactstrap';
+import SEO from '../components/seo/SEO';
 
 const Credits = () => {
   return (
@@ -10,6 +11,7 @@ const Credits = () => {
           
         `}
       </style>
+      <SEO keywords={["Techwinx", "tca"]} title="Credits page" />
       <Container className="pt-5">
         <p className="pt-1"></p>
         <h1 className="header-blue">Credits and Appreciation</h1>

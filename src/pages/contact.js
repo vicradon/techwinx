@@ -3,6 +3,7 @@ import { Col, Row, Button, Form, FormGroup, Label, Input, Container } from 'reac
 import Layout from '../components/Layout';
 import encode from '../utils/encode';
 import TechwinxAlert from '../components/TechwinxAlert';
+import SEO from '../components/seo/SEO';
 
 
 
@@ -115,6 +116,7 @@ const Contact = (props) => {
           }
         `}
       </style>
+      <SEO keywords={["Techwinx", "tca"]} title="contact page" />
       <Container className="pt-5">
         <p className="pt-1"></p>
         <TextContent />

@@ -3,6 +3,7 @@ import { Col, Row, Button, Form, FormGroup, Label, Input, Container } from 'reac
 import Layout from '../components/Layout';
 import TechwinxAlert from '../components/TechwinxAlert';
 import encode from '../utils/encode';
+import SEO from '../components/seo/SEO';
 
 const ReportIssueForm = () => {
   const [on, setOn] = useState(false)
@@ -93,6 +94,7 @@ const TextContent = () => {
 const ReportIssue = (props) => {
   return (
     <Layout>
+      <SEO keywords={["Techwinx", "tca"]} title="Report Issues page" />
       <style>
         {`
           .textarea {

@@ -3,6 +3,8 @@ import Layout from '../components/Layout';
 import { Container, Row, Col, CardImg, Card, CardBody, CardTitle, CardText } from 'reactstrap';
 import chineduImage from "../../static/images/chinedu.jpg"
 import ralphImage from "../../static/images/ralph.jpg"
+import SEO from '../components/seo/SEO'
+
 
 const About = () => {
   return (
@@ -18,6 +20,8 @@ const About = () => {
             }
         `}
       </style>
+      <SEO keywords={["Techwinx", "tca"]} title="About" />
+
       <Container className="pt-5">
         <p className="pt-1"></p>
         <h1 className="header-blue">About Techwinx</h1>
