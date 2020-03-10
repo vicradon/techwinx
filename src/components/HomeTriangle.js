@@ -54,7 +54,7 @@ export default function HomeTriangle() {
       </style>
       <div className = "triangle-container">
         <div className="fake-img-container">
-          <div className="fake-img"></div>
+          <img src = "../../static/images/techwinx logo.jpg" />
         </div>
         <div className="triangle">
           <h1 className = "motto">The Repository for Everything Tech!</h1>
