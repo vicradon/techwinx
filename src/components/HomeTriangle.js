@@ -1,4 +1,5 @@
 import React from 'react'
+import logo from "../../static/images/techwinx logo.jpg";
 
 export default function HomeTriangle() {
   return (
@@ -54,7 +55,7 @@ export default function HomeTriangle() {
       </style>
       <div className = "triangle-container">
         <div className="fake-img-container">
-          <img src = "../../static/images/techwinx logo.jpg" />
+          <img src =  {logo} alt = "Techwinx logo" />
         </div>
         <div className="triangle">
           <h1 className = "motto">The Repository for Everything Tech!</h1>
