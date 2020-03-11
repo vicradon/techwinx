@@ -16,3 +16,5 @@ category_name: MR
 ---
 Okay, I know I need to make more of you. but then, I need more stuff, etc.
 ![Levitation](../img-uploads/images.jpeg)
+
+SO, I don't know why inline images are no longer working. Why aren't they working anymore? The only reason I'm doing this is to get a commit on github
