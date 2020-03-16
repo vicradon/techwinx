@@ -1,0 +1,26 @@
+backend:
+  # name: test-repo
+  name: github
+  repo: vicradon/techwinx
+
+media_folder: src/img-uploads
+public_folder: ../img-uploads
+
+collections:
+  - name: Blog-Posts
+    label: Blog-Posts
+    folder: src/posts
+    create: true
+    fields:
+      - { name: title, label: Title }
+      - { name: date, label: Date, widget: datetime }
+      - { name: last_edit_date, label: Last Edited, widget: datetime }
+      - { name: path, label: Path }
+      - { name: tags, label: Tags, widget: list, options: ["ai", "mr", "uavs", "tefrica", "vr"]  }
+      - { name: templateKey, label: Template Key, widget: hidden, default: "blog-template"}
+      - { name: author, label: Author }
+      - { name: featuredImage, label: Featured Image, widget: image, default: "../img-uploads/gans.png" }
+      - { name: featured, label: Featured,  widget: boolean, default: false}
+      - { name: category, label: Category, widget: select, options: ["ai", "mr", "uavs", "tefrica"] }
+      - { name: category_name, label: Category Name, widget: select, options: ["AI", "MR", "UAVs", "Tefrica"] }
+      - { name: body, label: Body, widget: markdown }

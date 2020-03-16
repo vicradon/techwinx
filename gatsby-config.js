@@ -1,17 +1,14 @@
 module.exports = {
-  siteMetaData: {
+  siteMetadata: {
     title: "Techwinx",
-    titleTemplate: "%s : The Repository for Everything Tech",
-    description:
-      "Get global tech info with focus on Africa",
-    baseUrl: "https://www.techwinx.com", // No trailing slash allowed!
-    image: "", // Path to your image you placed in the 'static' folder
-    twitterUsername: "@Techwinx",
+    description:"The repository for everything tech",
+    url:"https://techwinx.com"
   },
   plugins: [
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sass`,
+    `gatsby-plugin-netlify-cms`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {

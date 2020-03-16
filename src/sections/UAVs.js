@@ -1,11 +1,35 @@
 import React from 'react'
 import PostCarousel from '../components/PostCarousel'
-import PostCard from '../components/PostCard'
 import droneIcon from '../images/ar.webp';
 import { Button } from 'reactstrap';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
+import mapPosts from '../utils/mapPosts';
 
 const UAVs = () => {
+  const data = useStaticQuery(graphql`
+    query UAVsQuery {
+      allMarkdownRemark(limit: 4, filter: {frontmatter: {category: {eq: "uavs"}}}) {
+        edges {
+          node {
+            excerpt(pruneLength: 70)
+            frontmatter {
+              title
+              path
+              featuredImage {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+  const posts = data.allMarkdownRemark.edges;
+
   return (
     <section className="section">
       <style>
@@ -19,12 +43,11 @@ const UAVs = () => {
       <div className="py-4">
         <h3 className="center"><img className="drone-icon" src={droneIcon} alt="drone icon" /> UAVs</h3>
         <PostCarousel>
-          <PostCard />
-          <PostCard />
-          <PostCard />
-          <PostCard />
+          {
+            mapPosts(posts)
+          }
         </PostCarousel>
-        <Link to = "/uavs" className = "center mt-3"><Button outline color = "primary">All UAV posts</Button></Link>
+        <Link to="/uavs" className="center mt-3"><Button outline color="primary">All UAV posts</Button></Link>
       </div>
     </section>
   )

@@ -2,6 +2,7 @@ import React from 'react';
 import PostCard from '../components/PostCard';
 import { graphql } from "gatsby"
 import PostsContainer from '../components/PostsContainer';
+import SEO from '../components/seo/SEO';
 
 const TefricaCategory = ({ data }) => {
   const posts = data.allMarkdownRemark.edges;
@@ -13,6 +14,7 @@ const TefricaCategory = ({ data }) => {
         
       `}
       </style>
+      <SEO keywords={["Techwinx", "tca"]} title="Tefrica Page" />
       {
         posts.map((x, i) => {
           let a = '';

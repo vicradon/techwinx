@@ -9,8 +9,6 @@ const BlogPostTemplate = ({ data }) => {
   const { markdownRemark: post } = data
   const categoryPosts = data.allMarkdownRemark.edges;
 
-  console.log();
-
   return (
     <Layout>
       <style>
@@ -133,7 +131,22 @@ BlogPostTemplate.propTypes = {
       }).isRequired,
     }).isRequired,
 
-  }).isRequired
+BlogPostTemplate.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      html: PropTypes.string.isRequired,
+      frontmatter: PropTypes.shape({
+        category_name: PropTypes.string.isRequired,
+        date: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        tags: PropTypes.object,
+        category: PropTypes.string.isRequired,
+        author: PropTypes.string.isRequired,
+      }).isRequired
+    }).isRequired,
+    allMarkdownRemark: PropTypes.object,
+  }),
 }
 
 */

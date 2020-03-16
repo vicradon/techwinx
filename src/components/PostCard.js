@@ -1,10 +1,8 @@
 import React from 'react';
-import Img from "gatsby-image"
 import {
   Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle
+  CardTitle
 } from 'reactstrap';
-import cardImg from '../images/318x180.svg';
 import { Link } from 'gatsby';
 
 const PostCard = (props) => {
@@ -22,15 +20,26 @@ const PostCard = (props) => {
             text-decoration:none;
             color:inherit;
           }
+          .post-card-image {
+            max-height: 200px !important;
+            // height:inherit !important;
+          }
+          .card-img-cont {
+            height:200px;
+          }
         `}
       </style>
       <Link to={props.path || "/404"} className="post-link">
         <Card>
-          {
-            props.image ?
-              <CardImg key = {new Date().toDateString()} top width="100%" src={props.image} alt="Stuff" />:
-              <CardImg key = {new Date().toDateString()} top width="100%" src={cardImg} alt="Stuff" />
-          }
+          {/* <div className="card-img-cont"> */}
+
+
+            {
+              props.image ?
+                <CardImg className="post-card-image" key={new Date()} top width="100%" src={props.image} alt="Stuff" /> :
+                ''
+            }
+          {/* </div> */}
           <CardBody>
             <CardTitle className="techwinx-card-title">{props.title} </CardTitle>
             <CardText>{props.content} </CardText>

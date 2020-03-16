@@ -1,8 +1,8 @@
 import React from 'react';
 import PostCarousel from '../components/PostCarousel';
-import PostCard from '../components/PostCard';
 import { Button } from 'reactstrap';
 import { useStaticQuery, graphql, Link } from "gatsby"
+import mapPosts from '../utils/mapPosts';
 
 
 const AI = () => {
@@ -40,13 +40,7 @@ const AI = () => {
         <h3 className="center"><span aria-label="jsx-a11y" role="img">🤖</span> AI</h3>
         <PostCarousel>
           {
-            posts.map((x, i) => <PostCard
-              key = {i}
-              title={x.node.frontmatter.title}
-              image={x.node.frontmatter.featuredImage.childImageSharp.fluid.src}
-              content={x.node.excerpt}
-              path={x.node.frontmatter.path}
-            />)
+            mapPosts(posts)
           }
         </PostCarousel>
         <Link to = "/ai" className="center mt-3"><Button outline color="primary">All AI posts</Button></Link>
