@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from "../../static/images/techwinx logo.jpg";
+import logo from "../../static/images/techwinx-logo.png";
 
 export default function HomeTriangle() {
   return (
