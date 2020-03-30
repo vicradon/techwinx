@@ -16,7 +16,27 @@ module.exports = {
         name: 'posts',
       },
     },
-    
+    {
+      resolve: 'gatsby-plugin-tinacms',
+      options: {
+        sidebar: {
+          hidden: process.env.NODE_ENV === "production",
+          position: "displace",
+        },
+        plugins: [
+          // We'll add some Tinacms plugins in the next step.
+        ],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-tinacms',
+      options: {
+        plugins: [
+          "gatsby-tinacms-git",
+          "gatsby-tinacms-remark",
+        ],
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
